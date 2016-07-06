@@ -14,22 +14,49 @@ class MainViewController: UITabBarController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        
+        
+        tabBar.tintColor = UIColor.orangeColor()
+        
+        //1. create the main page
+        //let home = HomeTableViewController()
+        addChildViewController(HomeTableViewController(),title:"Home",imageName:"tabbar_home")
+        addChildViewController(DiscoverTableViewController(),title:"Discover",imageName:"tabbar_message_center")
+        addChildViewController(MessageTableViewController(),title:"Message",imageName:"tabbar_discover")
+        addChildViewController(ProfileTableViewController(),title:"Profile",imageName:"tabbar_profile")
+        
+        
+       
     }
     
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+   
+    
+    //initialize child view controller
+    private func addChildViewController(childController: UIViewController, title:String, imageName:String){
+    
+    
+        //1.1 create tabbar items
+        
+        childController.tabBarItem.image = UIImage(named:imageName)
+        childController.tabBarItem.selectedImage = UIImage(named:imageName+"_highlighted")
+        
+        
+        //1.2 navigation title
+        
+        childController.title = title
+        //will do the following two things at the same tile
+        //home.tabBarItem.title = "Home"
+        //home.navigationItem.title = "Home"
+        
+        //2.create the navigation bar
+        
+        let navigationBar = UINavigationController()
+        navigationBar.addChildViewController(childController)
+        
+        //3.add navigation bar to the current vewi UITabBarController
+        addChildViewController(navigationBar)
+    
     }
-    */
-
+   
 }
