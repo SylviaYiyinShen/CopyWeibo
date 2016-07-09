@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		373BA2241D2FD19300B7725C /* BaseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 373BA2231D2FD19300B7725C /* BaseTableViewController.swift */; };
+		373BA2261D2FD50C00B7725C /* VisitorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 373BA2251D2FD50C00B7725C /* VisitorView.swift */; };
+		373BA2281D2FDE0800B7725C /* UIView+AutoLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 373BA2271D2FDE0800B7725C /* UIView+AutoLayout.swift */; };
 		3769C7BC1D15308D00BD14F2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3769C7BB1D15308D00BD14F2 /* AppDelegate.swift */; };
 		3769C7C31D15308D00BD14F2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3769C7C21D15308D00BD14F2 /* Assets.xcassets */; };
 		3769C7D11D15308D00BD14F2 /* CopyWeiboTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3769C7D01D15308D00BD14F2 /* CopyWeiboTests.swift */; };
@@ -38,6 +41,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		373BA2231D2FD19300B7725C /* BaseTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseTableViewController.swift; sourceTree = "<group>"; };
+		373BA2251D2FD50C00B7725C /* VisitorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VisitorView.swift; sourceTree = "<group>"; };
+		373BA2271D2FDE0800B7725C /* UIView+AutoLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+AutoLayout.swift"; sourceTree = "<group>"; };
 		3769C7B81D15308D00BD14F2 /* CopyWeibo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CopyWeibo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3769C7BB1D15308D00BD14F2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3769C7C21D15308D00BD14F2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -173,6 +179,8 @@
 			children = (
 				379186911D2D3438003FAA92 /* Resource */,
 				379186871D2D19B4003FAA92 /* MainViewController.swift */,
+				373BA2231D2FD19300B7725C /* BaseTableViewController.swift */,
+				373BA2251D2FD50C00B7725C /* VisitorView.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -196,6 +204,7 @@
 		379186821D2D10F8003FAA92 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				373BA2271D2FDE0800B7725C /* UIView+AutoLayout.swift */,
 			);
 			path = Tools;
 			sourceTree = "<group>";
@@ -344,9 +353,12 @@
 			files = (
 				379186901D2D1A3C003FAA92 /* ProfileTableViewController.swift in Sources */,
 				3791868A1D2D19D8003FAA92 /* HomeTableViewController.swift in Sources */,
+				373BA2241D2FD19300B7725C /* BaseTableViewController.swift in Sources */,
 				379186881D2D19B4003FAA92 /* MainViewController.swift in Sources */,
 				3791868C1D2D1A1E003FAA92 /* DiscoverTableViewController.swift in Sources */,
+				373BA2281D2FDE0800B7725C /* UIView+AutoLayout.swift in Sources */,
 				3791868E1D2D1A2C003FAA92 /* MessageTableViewController.swift in Sources */,
+				373BA2261D2FD50C00B7725C /* VisitorView.swift in Sources */,
 				3769C7BC1D15308D00BD14F2 /* AppDelegate.swift in Sources */,
 				379186951D2D3438003FAA92 /* NullViewController.swift in Sources */,
 			);

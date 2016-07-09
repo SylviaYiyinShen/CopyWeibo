@@ -15,49 +15,65 @@ class MainViewController: UITabBarController {
 
         // Do any additional setup after loading the view.
         
-        
-        tabBar.tintColor = UIColor.orangeColor()
-        
-        
-  //      addChildViewController("HomeTableViewController",title:"Home",imageName:"tabbar_home")
-//        addChildViewController(HomeTableViewController(),title:"Home",imageName:"tabbar_home")
-//        addChildViewController(DiscoverTableViewController(),title:"Discover",imageName:"tabbar_message_center")
-//        addChildViewController(MessageTableViewController(),title:"Message",imageName:"tabbar_discover")
-//        addChildViewController(ProfileTableViewController(),title:"Profile",imageName:"tabbar_profile")
+        //change to setting color of the global appearance in AppDelegate
+        //tabBar.tintColor = UIColor.orangeColor()
         
         
+
+        addChildViewControllers()
+        
+       
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        setupComposeBtn()
+    }
+    
+    private func setupComposeBtn(){
+        tabBar.addSubview(composeBtn)
+        let width=UIScreen.mainScreen().bounds.size.width/CGFloat((viewControllers?.count)!)
+        let rect=CGRect(x:0,y:0,width:width,height: 44)
+        composeBtn.frame=CGRectOffset(rect, 2*width,0)
+    
+    }
+    
+
+   
+    private func addChildViewControllers(){
         //create view controllers from the JSON file
         let path=NSBundle.mainBundle().pathForResource("MainVCSettings.json", ofType:nil)
         if let jsonPath=path{
             let jsonData=NSData(contentsOfFile: jsonPath)
             
             do{
-             let dictionaryArray = try NSJSONSerialization.JSONObjectWithData(jsonData!, options: NSJSONReadingOptions.MutableContainers)
-                print(dictionaryArray)
+                let dictionaryArray = try NSJSONSerialization.JSONObjectWithData(jsonData!, options: NSJSONReadingOptions.MutableContainers)
+                //print(dictionaryArray)
                 //travase the dictionary to create view controller
                 for vcDictionary in dictionaryArray as! [[String:String]]{
                     addChildViewController(vcDictionary["vcName"]!, title: vcDictionary["title"]!, imageName: vcDictionary["imageName"]!)
-                
+                    
                 }
                 
                 
                 
             }catch{
                 print(error)
-            
+                //      addChildViewController("HomeTableViewController",title:"Home",imageName:"tabbar_home")
+                //        addChildViewController(HomeTableViewController(),title:"Home",imageName:"tabbar_home")
+                //        addChildViewController(DiscoverTableViewController(),title:"Discover",imageName:"tabbar_message_center")
+                //        addChildViewController(MessageTableViewController(),title:"Message",imageName:"tabbar_discover")
+                //        addChildViewController(ProfileTableViewController(),title:"Profile",imageName:"tabbar_profile")
+                
+                //
+                
             }
-           
+            
         }
-        
-        //
-        
-        
-       
-    }
-    
 
-   
     
+    }
     //initialize child view controller
 //    private func addChildViewController(childController: UIViewController, title:String, imageName:String){
     private func addChildViewController(childControllerName: String, title:String, imageName:String){
@@ -105,5 +121,26 @@ class MainViewController: UITabBarController {
         //addChildViewController(navigationBar)
     
     }
+    
+    
+    
+    // MARK: composebutton click event control
+    //should not be private
+    func composeBtnClick(){
+    
+    
+    }
+    // MARK: -Lazy loading for the add button
+    private lazy var composeBtn:UIButton = {
+        let btn = UIButton()
+        btn.setImage(UIImage(named:"tabbar_compose_icon_add"),forState:UIControlState.Normal)
+        btn.setImage(UIImage(named:"tabbar_compose_icon_add_highlighted"),forState:UIControlState.Highlighted)
+        btn.setBackgroundImage(UIImage(named:"tabbar_compose_button"),forState:UIControlState.Normal)
+        btn.setBackgroundImage(UIImage(named:"tabbar_compose_button_highlighted"),forState:UIControlState.Highlighted)
+        
+        btn.addTarget(self, action: "composeBtnClick", forControlEvents: UIControlEvents.TouchUpInside)
+        
+        return btn
+    }()
    
 }
