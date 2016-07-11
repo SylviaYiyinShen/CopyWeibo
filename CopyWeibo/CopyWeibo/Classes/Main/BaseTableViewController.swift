@@ -11,7 +11,7 @@ import UIKit
 class BaseTableViewController: UITableViewController, VisitorViewDelegate{
 
     
-    var userLogin = false
+    var userLogin = true
     var visitorView:VisitorView?
         
     override func viewDidLoad() {

@@ -21,6 +21,13 @@
 		379186901D2D1A3C003FAA92 /* ProfileTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3791868F1D2D1A3C003FAA92 /* ProfileTableViewController.swift */; };
 		379186941D2D3438003FAA92 /* MainVCSettings.json in Resources */ = {isa = PBXBuildFile; fileRef = 379186921D2D3438003FAA92 /* MainVCSettings.json */; };
 		379186951D2D3438003FAA92 /* NullViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 379186931D2D3438003FAA92 /* NullViewController.swift */; };
+		37E15EFD1D3100D1007F9B8D /* UIBarButtonItem+Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37E15EFC1D3100D1007F9B8D /* UIBarButtonItem+Category.swift */; };
+		37E15F011D310C56007F9B8D /* TitleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37E15F001D310C56007F9B8D /* TitleButton.swift */; };
+		37E15F061D312608007F9B8D /* PopupMenuViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 37E15F051D312608007F9B8D /* PopupMenuViewController.storyboard */; };
+		37E15F081D312E38007F9B8D /* PopupMenuPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37E15F071D312E38007F9B8D /* PopupMenuPresentationController.swift */; };
+		37E15F0A1D312FC5007F9B8D /* PopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37E15F091D312FC5007F9B8D /* PopupViewController.swift */; };
+		37E84C2E1D33A8BE009153DA /* HomeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 379186891D2D19D8003FAA92 /* HomeTableViewController.swift */; };
+		37E84C301D33AFE9009153DA /* PopupMenuAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37E84C2F1D33AFE9009153DA /* PopupMenuAnimator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +68,12 @@
 		3791868F1D2D1A3C003FAA92 /* ProfileTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileTableViewController.swift; sourceTree = "<group>"; };
 		379186921D2D3438003FAA92 /* MainVCSettings.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = MainVCSettings.json; sourceTree = "<group>"; };
 		379186931D2D3438003FAA92 /* NullViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NullViewController.swift; sourceTree = "<group>"; };
+		37E15EFC1D3100D1007F9B8D /* UIBarButtonItem+Category.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIBarButtonItem+Category.swift"; sourceTree = "<group>"; };
+		37E15F001D310C56007F9B8D /* TitleButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TitleButton.swift; sourceTree = "<group>"; };
+		37E15F051D312608007F9B8D /* PopupMenuViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = PopupMenuViewController.storyboard; sourceTree = "<group>"; };
+		37E15F071D312E38007F9B8D /* PopupMenuPresentationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopupMenuPresentationController.swift; sourceTree = "<group>"; };
+		37E15F091D312FC5007F9B8D /* PopupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopupViewController.swift; sourceTree = "<group>"; };
+		37E84C2F1D33AFE9009153DA /* PopupMenuAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopupMenuAnimator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -154,6 +167,8 @@
 		3791867C1D2D10F8003FAA92 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				37E15EFC1D3100D1007F9B8D /* UIBarButtonItem+Category.swift */,
+				37E15F001D310C56007F9B8D /* TitleButton.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -170,6 +185,7 @@
 			isa = PBXGroup;
 			children = (
 				379186891D2D19D8003FAA92 /* HomeTableViewController.swift */,
+				37E15F021D312532007F9B8D /* PopupMenu */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -216,6 +232,17 @@
 				379186931D2D3438003FAA92 /* NullViewController.swift */,
 			);
 			path = Resource;
+			sourceTree = "<group>";
+		};
+		37E15F021D312532007F9B8D /* PopupMenu */ = {
+			isa = PBXGroup;
+			children = (
+				37E15F051D312608007F9B8D /* PopupMenuViewController.storyboard */,
+				37E15F071D312E38007F9B8D /* PopupMenuPresentationController.swift */,
+				37E15F091D312FC5007F9B8D /* PopupViewController.swift */,
+				37E84C2F1D33AFE9009153DA /* PopupMenuAnimator.swift */,
+			);
+			path = PopupMenu;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -325,6 +352,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				37E15F061D312608007F9B8D /* PopupMenuViewController.storyboard in Resources */,
 				379186941D2D3438003FAA92 /* MainVCSettings.json in Resources */,
 				3769C7C31D15308D00BD14F2 /* Assets.xcassets in Resources */,
 			);
@@ -356,11 +384,16 @@
 				373BA2241D2FD19300B7725C /* BaseTableViewController.swift in Sources */,
 				379186881D2D19B4003FAA92 /* MainViewController.swift in Sources */,
 				3791868C1D2D1A1E003FAA92 /* DiscoverTableViewController.swift in Sources */,
+				37E15EFD1D3100D1007F9B8D /* UIBarButtonItem+Category.swift in Sources */,
 				373BA2281D2FDE0800B7725C /* UIView+AutoLayout.swift in Sources */,
+				37E84C301D33AFE9009153DA /* PopupMenuAnimator.swift in Sources */,
 				3791868E1D2D1A2C003FAA92 /* MessageTableViewController.swift in Sources */,
 				373BA2261D2FD50C00B7725C /* VisitorView.swift in Sources */,
 				3769C7BC1D15308D00BD14F2 /* AppDelegate.swift in Sources */,
+				37E15F011D310C56007F9B8D /* TitleButton.swift in Sources */,
 				379186951D2D3438003FAA92 /* NullViewController.swift in Sources */,
+				37E15F081D312E38007F9B8D /* PopupMenuPresentationController.swift in Sources */,
+				37E15F0A1D312FC5007F9B8D /* PopupViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -376,6 +409,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				37E84C2E1D33A8BE009153DA /* HomeTableViewController.swift in Sources */,
 				3769C7DC1D15308D00BD14F2 /* CopyWeiboUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -483,7 +517,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				INFOPLIST_FILE = CopyWeibo/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Sylvia.CopyWeibo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -496,7 +530,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				INFOPLIST_FILE = CopyWeibo/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Sylvia.CopyWeibo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
