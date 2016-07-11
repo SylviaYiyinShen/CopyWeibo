@@ -28,6 +28,8 @@
 		37E15F0A1D312FC5007F9B8D /* PopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37E15F091D312FC5007F9B8D /* PopupViewController.swift */; };
 		37E84C2E1D33A8BE009153DA /* HomeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 379186891D2D19D8003FAA92 /* HomeTableViewController.swift */; };
 		37E84C301D33AFE9009153DA /* PopupMenuAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37E84C2F1D33AFE9009153DA /* PopupMenuAnimator.swift */; };
+		37E84C331D33BF32009153DA /* QRCodeViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 37E84C321D33BF32009153DA /* QRCodeViewController.storyboard */; };
+		37E84C351D33C046009153DA /* QRCodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37E84C341D33C046009153DA /* QRCodeViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -74,6 +76,8 @@
 		37E15F071D312E38007F9B8D /* PopupMenuPresentationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopupMenuPresentationController.swift; sourceTree = "<group>"; };
 		37E15F091D312FC5007F9B8D /* PopupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopupViewController.swift; sourceTree = "<group>"; };
 		37E84C2F1D33AFE9009153DA /* PopupMenuAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopupMenuAnimator.swift; sourceTree = "<group>"; };
+		37E84C321D33BF32009153DA /* QRCodeViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = QRCodeViewController.storyboard; sourceTree = "<group>"; };
+		37E84C341D33C046009153DA /* QRCodeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QRCodeViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -184,6 +188,7 @@
 		3791867E1D2D10F8003FAA92 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				37E84C311D33BD6A009153DA /* QRCode */,
 				379186891D2D19D8003FAA92 /* HomeTableViewController.swift */,
 				37E15F021D312532007F9B8D /* PopupMenu */,
 			);
@@ -243,6 +248,15 @@
 				37E84C2F1D33AFE9009153DA /* PopupMenuAnimator.swift */,
 			);
 			path = PopupMenu;
+			sourceTree = "<group>";
+		};
+		37E84C311D33BD6A009153DA /* QRCode */ = {
+			isa = PBXGroup;
+			children = (
+				37E84C321D33BF32009153DA /* QRCodeViewController.storyboard */,
+				37E84C341D33C046009153DA /* QRCodeViewController.swift */,
+			);
+			path = QRCode;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -355,6 +369,7 @@
 				37E15F061D312608007F9B8D /* PopupMenuViewController.storyboard in Resources */,
 				379186941D2D3438003FAA92 /* MainVCSettings.json in Resources */,
 				3769C7C31D15308D00BD14F2 /* Assets.xcassets in Resources */,
+				37E84C331D33BF32009153DA /* QRCodeViewController.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -381,6 +396,7 @@
 			files = (
 				379186901D2D1A3C003FAA92 /* ProfileTableViewController.swift in Sources */,
 				3791868A1D2D19D8003FAA92 /* HomeTableViewController.swift in Sources */,
+				37E84C351D33C046009153DA /* QRCodeViewController.swift in Sources */,
 				373BA2241D2FD19300B7725C /* BaseTableViewController.swift in Sources */,
 				379186881D2D19B4003FAA92 /* MainViewController.swift in Sources */,
 				3791868C1D2D1A1E003FAA92 /* DiscoverTableViewController.swift in Sources */,
