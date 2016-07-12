@@ -24,6 +24,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         //2.create the root view controller
         window?.rootViewController = MainViewController()
+        //window?.rootViewController = OAuthViewController()
         window?.makeKeyAndVisible()
         
         //3. set global color

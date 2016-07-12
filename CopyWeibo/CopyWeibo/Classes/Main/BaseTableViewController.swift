@@ -11,7 +11,7 @@ import UIKit
 class BaseTableViewController: UITableViewController, VisitorViewDelegate{
 
     
-    var userLogin = true
+    var userLogin = false
     var visitorView:VisitorView?
         
     override func viewDidLoad() {
@@ -49,6 +49,11 @@ class BaseTableViewController: UITableViewController, VisitorViewDelegate{
     // MARK: - VisitorViewDelegte functions
     func loginBtnDidClick() {
         print(#function)
+        //show login page
+        let oAuVC =  OAuthViewController()
+        let navigation = UINavigationController(rootViewController: oAuVC)
+        presentViewController(navigation, animated:true, completion: nil)
+        
     }
     
     func registerBtnDidClick() {
