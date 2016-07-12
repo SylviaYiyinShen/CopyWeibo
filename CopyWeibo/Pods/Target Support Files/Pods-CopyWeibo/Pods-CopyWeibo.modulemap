@@ -1,0 +1,6 @@
+framework module Pods_CopyWeibo {
+  umbrella header "Pods-CopyWeibo-umbrella.h"
+
+  export *
+  module * { export * }
+}
