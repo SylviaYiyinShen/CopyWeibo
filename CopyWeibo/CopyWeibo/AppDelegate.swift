@@ -8,14 +8,41 @@
 
 import UIKit
 
+//for notification
+let SwitchRootViewControllerKey = "SwitchRootViewControllerKey"
+
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
-
+    func switchRootViewController(notice:NSNotification){
+        
+        if notice.object as! Bool{
+            window?.rootViewController = MainViewController()
+        
+        
+        }else{
+            window?.rootViewController = WelcomeViewController()
+        }
+       
+    
+    
+    }
+    
+    deinit{
+    
+    
+        NSNotificationCenter.defaultCenter().removeObserver(self)
+    
+    }
+    
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
+        
+        //register notification
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(AppDelegate.switchRootViewController(_:)), name: SwitchRootViewControllerKey, object: nil)
         
         
         //testing only
@@ -30,7 +57,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //        window?.rootViewController = MainViewController()
         //window?.rootViewController = OAuthViewController()
 //        window?.rootViewController = NewFeaturesCollectionViewController()
-        window?.rootViewController = WelcomeViewController()
+//        window?.rootViewController = WelcomeViewController()
+        window?.rootViewController = defaultRootController()
         window?.makeKeyAndVisible()
         
         //3. set global color
@@ -38,11 +66,52 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UITabBar.appearance().tintColor =  UIColor.orangeColor()
         
         
+        
+        checkUpdate()
         return true
     }
 
+    private func defaultRootController()->UIViewController{
+        
+        //login-> check new version
+        if UserAccount.isLogin(){
+            
+            return checkUpdate() ?  NewFeaturesCollectionViewController() :WelcomeViewController()
+        
+        
+        }
     
+        
+        return MainViewController()
+    }
     
+    private func checkUpdate()->Bool{
+    
+        //1. get the current version -> info.plist                  CFBundleShortVersionString
+        let currentVersion = NSBundle.mainBundle().infoDictionary!["CFBundleShortVersionString"] as! String
+        
+        //2. get the previous version -> read from local file
+        let sandboxVersion = NSUserDefaults.standardUserDefaults().objectForKey("CFBundleShortVersionString") as? String ?? ""// ?? ""  : if value== nil, set to ""
+        
+        
+        
+        
+        //3. compare current version with precious version
+        
+        print("current:\(currentVersion)  sandbox:\(sandboxVersion)")
+        //3.1 current>precious
+//        3.1.1 save current version
+        if currentVersion.compare(sandboxVersion)==NSComparisonResult.OrderedDescending{
+            NSUserDefaults.standardUserDefaults().setObject(currentVersion, forKey: "CFBundleShortVersionString")
+            return true
+        }
+        
+
+        //3.2 current <= precious
+        
+        return false
+    
+    }
     
     /*
     func applicationWillResignActive(application: UIApplication) {

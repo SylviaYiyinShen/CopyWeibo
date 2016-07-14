@@ -67,6 +67,10 @@ class UserAccount: NSObject, NSCoding {
                 
                 //archive account
                 self.saveAccount()
+                
+                NSNotificationCenter.defaultCenter().postNotificationName(SwitchRootViewControllerKey, object: false)
+                
+                
                 return
             }
             SVProgressHUD.showInfoWithStatus("Bad network connection...", maskType: SVProgressHUDMaskType.Black)

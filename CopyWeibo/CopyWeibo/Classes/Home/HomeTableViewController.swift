@@ -9,7 +9,23 @@
 import UIKit
 import AFNetworking
 
+let HOME_CELL_ID = "HOME_CELL_ID"
+
 class HomeTableViewController: BaseTableViewController{
+    
+    
+    var statuses :[Status]?{
+    
+        didSet{
+        
+            //update the table list after get the statuses
+            tableView.reloadData()
+        
+        }
+    
+    }
+    
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,6 +45,29 @@ class HomeTableViewController: BaseTableViewController{
         //register notification
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(HomeTableViewController.updateTitleBtn), name: PopupWillPresent, object: nil)
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(HomeTableViewController.updateTitleBtn), name: PopupWillDismiss, object: nil)
+        
+        
+        
+        //register cell for the table view
+        
+        tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: HOME_CELL_ID)
+        
+        
+        //load data for weibo posts
+        loadData()
+    }
+    
+    private func loadData(){
+        Status.loadStatuses { (models, error) in
+            
+            if error != nil{
+                return
+            
+            }
+            self.statuses =  models
+        }
+    
+    
     }
     
     
@@ -115,5 +154,26 @@ class HomeTableViewController: BaseTableViewController{
         animator.presentFrame =  CGRect(x: 100, y: 56, width: 200, height: 350)
         return animator
     }()
+}
+
+extension HomeTableViewController{
+    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
+        
+        return statuses?.count ?? 0
+    }
+
+    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        
+        let cell = tableView.dequeueReusableCellWithIdentifier(HOME_CELL_ID, forIndexPath: indexPath)
+        let status = statuses![indexPath.row]
+        cell.textLabel?.text =  status.text
+        
+        
+        
+        return cell
+    }
+
+
 }
 

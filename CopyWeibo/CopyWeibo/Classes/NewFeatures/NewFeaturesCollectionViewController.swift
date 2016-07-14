@@ -151,6 +151,9 @@ class NewFeatureCell : UICollectionViewCell{
     func startBtnClicked(){
     
         print(#function)
+        NSNotificationCenter.defaultCenter().postNotificationName(SwitchRootViewControllerKey, object: true)
+        
+        //window?.rootViewController = MainViewController() -> AppDelegate
     
     }
     

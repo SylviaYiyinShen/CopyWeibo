@@ -27,6 +27,7 @@
 		37D2477B1D363B6D00181B44 /* String+Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37D2477A1D363B6D00181B44 /* String+Category.swift */; };
 		37D2477E1D37798D00181B44 /* NewFeaturesCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37D2477D1D37798D00181B44 /* NewFeaturesCollectionViewController.swift */; };
 		37D247821D378E6700181B44 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37D247811D378E6700181B44 /* WelcomeViewController.swift */; };
+		37D4DFEC1D37BCBF0073DCB3 /* Status.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37D4DFEB1D37BCBF0073DCB3 /* Status.swift */; };
 		37E15EFD1D3100D1007F9B8D /* UIBarButtonItem+Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37E15EFC1D3100D1007F9B8D /* UIBarButtonItem+Category.swift */; };
 		37E15F011D310C56007F9B8D /* TitleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37E15F001D310C56007F9B8D /* TitleButton.swift */; };
 		37E15F061D312608007F9B8D /* PopupMenuViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 37E15F051D312608007F9B8D /* PopupMenuViewController.storyboard */; };
@@ -83,6 +84,7 @@
 		37D2477A1D363B6D00181B44 /* String+Category.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Category.swift"; sourceTree = "<group>"; };
 		37D2477D1D37798D00181B44 /* NewFeaturesCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewFeaturesCollectionViewController.swift; sourceTree = "<group>"; };
 		37D247811D378E6700181B44 /* WelcomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
+		37D4DFEB1D37BCBF0073DCB3 /* Status.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Status.swift; sourceTree = "<group>"; };
 		37E15EFC1D3100D1007F9B8D /* UIBarButtonItem+Category.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIBarButtonItem+Category.swift"; sourceTree = "<group>"; };
 		37E15F001D310C56007F9B8D /* TitleButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TitleButton.swift; sourceTree = "<group>"; };
 		37E15F051D312608007F9B8D /* PopupMenuViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = PopupMenuViewController.storyboard; sourceTree = "<group>"; };
@@ -221,6 +223,7 @@
 				37E84C311D33BD6A009153DA /* QRCode */,
 				379186891D2D19D8003FAA92 /* HomeTableViewController.swift */,
 				37E15F021D312532007F9B8D /* PopupMenu */,
+				37D4DFEB1D37BCBF0073DCB3 /* Status.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -520,6 +523,7 @@
 				373BA2261D2FD50C00B7725C /* VisitorView.swift in Sources */,
 				3769C7BC1D15308D00BD14F2 /* AppDelegate.swift in Sources */,
 				37E15F011D310C56007F9B8D /* TitleButton.swift in Sources */,
+				37D4DFEC1D37BCBF0073DCB3 /* Status.swift in Sources */,
 				37D2477E1D37798D00181B44 /* NewFeaturesCollectionViewController.swift in Sources */,
 				370A47391D350CB90014E4CF /* NetWorkTools.swift in Sources */,
 				379186951D2D3438003FAA92 /* NullViewController.swift in Sources */,
