@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SVProgressHUD
 
 
 class OAuthViewController: UIViewController {
@@ -35,6 +36,21 @@ class OAuthViewController: UIViewController {
        
         
     }
+    
+    
+    
+    // MARK: - for better user experence
+    func webViewDidStartLoad(webView: UIWebView) {
+        //
+        SVProgressHUD.showInfoWithStatus("Loading...",maskType: SVProgressHUDMaskType.Black)
+    }
+    
+    func webViewDidFinishLoad(webView: UIWebView) {
+        SVProgressHUD.dismiss()
+    }
+    
+    
+    
     func closeBtnClick(){
     
         dismissViewControllerAnimated(true, completion: nil)
@@ -120,9 +136,19 @@ extension OAuthViewController : UIWebViewDelegate{
 //        })
         let path = "oauth2/access_token?client_id=\(APP_KEY)&client_secret=\(SECRET_KEY)&grant_type=authorization_code&code=\(code)&redirect_uri=\(REDIRECT_URL)"
         //let params = ["client_id":APP_KEY, "client_secret":SECRET_KEY, "grant_type":"authorization_code", "code":code, "redirect_uri":REDIRECT_URL]
-        // 3.发送POST请求
+
         NetWorkTools.sharedInstance().POST(path, parameters: nil, success: { (_, JSON) -> Void in
             print(JSON)
+            //access token-> 2.00BMks7GaBr4wD74092aab3aCuUkLB
+            print(NSDate(timeIntervalSinceNow: 157679999))
+            let account = UserAccount(dict:JSON as! [String : AnyObject])
+            print(account)
+
+            //get user info
+            //finished(account:self,error:nil)
+            
+            account.loadUserInfo()
+            
         }) { (_, error) -> Void in
             print(error)
         }

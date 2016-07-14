@@ -17,14 +17,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
         
+        
+        //testing only
+        //print(UserAccount.loadAccount())
+        
         //1.create the window
         window=UIWindow(frame: UIScreen.mainScreen().bounds)
         window?.backgroundColor = UIColor.whiteColor()
         
         
         //2.create the root view controller
-        window?.rootViewController = MainViewController()
+//        window?.rootViewController = MainViewController()
         //window?.rootViewController = OAuthViewController()
+//        window?.rootViewController = NewFeaturesCollectionViewController()
+        window?.rootViewController = WelcomeViewController()
         window?.makeKeyAndVisible()
         
         //3. set global color

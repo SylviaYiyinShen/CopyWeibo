@@ -23,6 +23,10 @@
 		379186901D2D1A3C003FAA92 /* ProfileTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3791868F1D2D1A3C003FAA92 /* ProfileTableViewController.swift */; };
 		379186941D2D3438003FAA92 /* MainVCSettings.json in Resources */ = {isa = PBXBuildFile; fileRef = 379186921D2D3438003FAA92 /* MainVCSettings.json */; };
 		379186951D2D3438003FAA92 /* NullViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 379186931D2D3438003FAA92 /* NullViewController.swift */; };
+		37D247791D36116100181B44 /* UserAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37D247781D36116100181B44 /* UserAccount.swift */; };
+		37D2477B1D363B6D00181B44 /* String+Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37D2477A1D363B6D00181B44 /* String+Category.swift */; };
+		37D2477E1D37798D00181B44 /* NewFeaturesCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37D2477D1D37798D00181B44 /* NewFeaturesCollectionViewController.swift */; };
+		37D247821D378E6700181B44 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37D247811D378E6700181B44 /* WelcomeViewController.swift */; };
 		37E15EFD1D3100D1007F9B8D /* UIBarButtonItem+Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37E15EFC1D3100D1007F9B8D /* UIBarButtonItem+Category.swift */; };
 		37E15F011D310C56007F9B8D /* TitleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37E15F001D310C56007F9B8D /* TitleButton.swift */; };
 		37E15F061D312608007F9B8D /* PopupMenuViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 37E15F051D312608007F9B8D /* PopupMenuViewController.storyboard */; };
@@ -75,6 +79,10 @@
 		3791868F1D2D1A3C003FAA92 /* ProfileTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileTableViewController.swift; sourceTree = "<group>"; };
 		379186921D2D3438003FAA92 /* MainVCSettings.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = MainVCSettings.json; sourceTree = "<group>"; };
 		379186931D2D3438003FAA92 /* NullViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NullViewController.swift; sourceTree = "<group>"; };
+		37D247781D36116100181B44 /* UserAccount.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserAccount.swift; sourceTree = "<group>"; };
+		37D2477A1D363B6D00181B44 /* String+Category.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Category.swift"; sourceTree = "<group>"; };
+		37D2477D1D37798D00181B44 /* NewFeaturesCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewFeaturesCollectionViewController.swift; sourceTree = "<group>"; };
+		37D247811D378E6700181B44 /* WelcomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		37E15EFC1D3100D1007F9B8D /* UIBarButtonItem+Category.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIBarButtonItem+Category.swift"; sourceTree = "<group>"; };
 		37E15F001D310C56007F9B8D /* TitleButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TitleButton.swift; sourceTree = "<group>"; };
 		37E15F051D312608007F9B8D /* PopupMenuViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = PopupMenuViewController.storyboard; sourceTree = "<group>"; };
@@ -118,6 +126,7 @@
 			isa = PBXGroup;
 			children = (
 				370A47361D34E3010014E4CF /* OAuthViewController.swift */,
+				37D247781D36116100181B44 /* UserAccount.swift */,
 			);
 			path = OAuth;
 			sourceTree = "<group>";
@@ -176,6 +185,7 @@
 		3791867B1D2D10F7003FAA92 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				37D2477C1D37794400181B44 /* NewFeatures */,
 				370A47351D34E2D00014E4CF /* OAuth */,
 				3791867C1D2D10F8003FAA92 /* Common */,
 				3791867D1D2D10F8003FAA92 /* Discover */,
@@ -247,6 +257,7 @@
 			children = (
 				373BA2271D2FDE0800B7725C /* UIView+AutoLayout.swift */,
 				370A47381D350CB90014E4CF /* NetWorkTools.swift */,
+				37D2477A1D363B6D00181B44 /* String+Category.swift */,
 			);
 			path = Tools;
 			sourceTree = "<group>";
@@ -258,6 +269,15 @@
 				379186931D2D3438003FAA92 /* NullViewController.swift */,
 			);
 			path = Resource;
+			sourceTree = "<group>";
+		};
+		37D2477C1D37794400181B44 /* NewFeatures */ = {
+			isa = PBXGroup;
+			children = (
+				37D247811D378E6700181B44 /* WelcomeViewController.swift */,
+				37D2477D1D37798D00181B44 /* NewFeaturesCollectionViewController.swift */,
+			);
+			path = NewFeatures;
 			sourceTree = "<group>";
 		};
 		37E15F021D312532007F9B8D /* PopupMenu */ = {
@@ -488,15 +508,19 @@
 				37E84C351D33C046009153DA /* QRCodeViewController.swift in Sources */,
 				370A47371D34E3010014E4CF /* OAuthViewController.swift in Sources */,
 				373BA2241D2FD19300B7725C /* BaseTableViewController.swift in Sources */,
+				37D247791D36116100181B44 /* UserAccount.swift in Sources */,
 				379186881D2D19B4003FAA92 /* MainViewController.swift in Sources */,
 				3791868C1D2D1A1E003FAA92 /* DiscoverTableViewController.swift in Sources */,
 				37E15EFD1D3100D1007F9B8D /* UIBarButtonItem+Category.swift in Sources */,
 				373BA2281D2FDE0800B7725C /* UIView+AutoLayout.swift in Sources */,
 				37E84C301D33AFE9009153DA /* PopupMenuAnimator.swift in Sources */,
 				3791868E1D2D1A2C003FAA92 /* MessageTableViewController.swift in Sources */,
+				37D2477B1D363B6D00181B44 /* String+Category.swift in Sources */,
+				37D247821D378E6700181B44 /* WelcomeViewController.swift in Sources */,
 				373BA2261D2FD50C00B7725C /* VisitorView.swift in Sources */,
 				3769C7BC1D15308D00BD14F2 /* AppDelegate.swift in Sources */,
 				37E15F011D310C56007F9B8D /* TitleButton.swift in Sources */,
+				37D2477E1D37798D00181B44 /* NewFeaturesCollectionViewController.swift in Sources */,
 				370A47391D350CB90014E4CF /* NetWorkTools.swift in Sources */,
 				379186951D2D3438003FAA92 /* NullViewController.swift in Sources */,
 				37E15F081D312E38007F9B8D /* PopupMenuPresentationController.swift in Sources */,

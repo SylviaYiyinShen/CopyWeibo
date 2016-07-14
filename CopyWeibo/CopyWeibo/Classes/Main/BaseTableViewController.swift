@@ -11,12 +11,12 @@ import UIKit
 class BaseTableViewController: UITableViewController, VisitorViewDelegate{
 
     
-    var userLogin = false
+    var userLogin = UserAccount.isLogin()
     var visitorView:VisitorView?
         
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
      
     }
     
@@ -58,5 +58,6 @@ class BaseTableViewController: UITableViewController, VisitorViewDelegate{
     
     func registerBtnDidClick() {
         print(#function)
+        print(UserAccount.loadAccount())
     }
 }
