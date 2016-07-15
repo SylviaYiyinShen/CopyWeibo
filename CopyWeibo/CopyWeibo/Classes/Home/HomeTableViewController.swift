@@ -50,11 +50,18 @@ class HomeTableViewController: BaseTableViewController{
         
         //register cell for the table view
         
-        tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: HOME_CELL_ID)
+        tableView.registerClass(StatusTableViewCell.self, forCellReuseIdentifier: HOME_CELL_ID)
+        
+        tableView.rowHeight = 200
+//        tableView.estimatedRowHeight = 200
+//        tableView.rowHeight = UITableViewAutomaticDimension
+//        tableView.separatorStyle = UITableViewCellSeparatorStyle.None
         
         
         //load data for weibo posts
         loadData()
+        
+        
     }
     
     private func loadData(){
@@ -165,11 +172,11 @@ extension HomeTableViewController{
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCellWithIdentifier(HOME_CELL_ID, forIndexPath: indexPath)
+        let cell = tableView.dequeueReusableCellWithIdentifier(HOME_CELL_ID, forIndexPath: indexPath) as! StatusTableViewCell
         let status = statuses![indexPath.row]
-        cell.textLabel?.text =  status.text
-        
-        
+//        cell.textLabel?.text =  status.text
+        //cell.textLabel?.text =  status.user?.name
+        cell.status = status
         
         return cell
     }

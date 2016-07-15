@@ -9,6 +9,11 @@
 /* Begin PBXBuildFile section */
 		370A47371D34E3010014E4CF /* OAuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 370A47361D34E3010014E4CF /* OAuthViewController.swift */; };
 		370A47391D350CB90014E4CF /* NetWorkTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 370A47381D350CB90014E4CF /* NetWorkTools.swift */; };
+		370D963B1D38B599003F4FD4 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 370D963A1D38B599003F4FD4 /* User.swift */; };
+		370D963F1D38CB24003F4FD4 /* StatusTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 370D963E1D38CB24003F4FD4 /* StatusTableViewCell.swift */; };
+		370D96411D38F504003F4FD4 /* UILabel+Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 370D96401D38F504003F4FD4 /* UILabel+Category.swift */; };
+		370D96431D38F843003F4FD4 /* UIButton+Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 370D96421D38F843003F4FD4 /* UIButton+Category.swift */; };
+		370D96451D390933003F4FD4 /* NSDate+Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 370D96441D390933003F4FD4 /* NSDate+Category.swift */; };
 		373BA2241D2FD19300B7725C /* BaseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 373BA2231D2FD19300B7725C /* BaseTableViewController.swift */; };
 		373BA2261D2FD50C00B7725C /* VisitorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 373BA2251D2FD50C00B7725C /* VisitorView.swift */; };
 		373BA2281D2FDE0800B7725C /* UIView+AutoLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 373BA2271D2FDE0800B7725C /* UIView+AutoLayout.swift */; };
@@ -60,6 +65,11 @@
 /* Begin PBXFileReference section */
 		370A47361D34E3010014E4CF /* OAuthViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OAuthViewController.swift; sourceTree = "<group>"; };
 		370A47381D350CB90014E4CF /* NetWorkTools.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetWorkTools.swift; sourceTree = "<group>"; };
+		370D963A1D38B599003F4FD4 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		370D963E1D38CB24003F4FD4 /* StatusTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StatusTableViewCell.swift; path = QRCode/StatusTableViewCell.swift; sourceTree = "<group>"; };
+		370D96401D38F504003F4FD4 /* UILabel+Category.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UILabel+Category.swift"; sourceTree = "<group>"; };
+		370D96421D38F843003F4FD4 /* UIButton+Category.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIButton+Category.swift"; sourceTree = "<group>"; };
+		370D96441D390933003F4FD4 /* NSDate+Category.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSDate+Category.swift"; sourceTree = "<group>"; };
 		373BA2231D2FD19300B7725C /* BaseTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseTableViewController.swift; sourceTree = "<group>"; };
 		373BA2251D2FD50C00B7725C /* VisitorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VisitorView.swift; sourceTree = "<group>"; };
 		373BA2271D2FDE0800B7725C /* UIView+AutoLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+AutoLayout.swift"; sourceTree = "<group>"; };
@@ -205,6 +215,8 @@
 			children = (
 				37E15EFC1D3100D1007F9B8D /* UIBarButtonItem+Category.swift */,
 				37E15F001D310C56007F9B8D /* TitleButton.swift */,
+				370D96401D38F504003F4FD4 /* UILabel+Category.swift */,
+				370D96421D38F843003F4FD4 /* UIButton+Category.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -224,6 +236,8 @@
 				379186891D2D19D8003FAA92 /* HomeTableViewController.swift */,
 				37E15F021D312532007F9B8D /* PopupMenu */,
 				37D4DFEB1D37BCBF0073DCB3 /* Status.swift */,
+				370D963A1D38B599003F4FD4 /* User.swift */,
+				370D963E1D38CB24003F4FD4 /* StatusTableViewCell.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -258,6 +272,7 @@
 		379186821D2D10F8003FAA92 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				370D96441D390933003F4FD4 /* NSDate+Category.swift */,
 				373BA2271D2FDE0800B7725C /* UIView+AutoLayout.swift */,
 				370A47381D350CB90014E4CF /* NetWorkTools.swift */,
 				37D2477A1D363B6D00181B44 /* String+Category.swift */,
@@ -506,6 +521,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				370D96451D390933003F4FD4 /* NSDate+Category.swift in Sources */,
 				379186901D2D1A3C003FAA92 /* ProfileTableViewController.swift in Sources */,
 				3791868A1D2D19D8003FAA92 /* HomeTableViewController.swift in Sources */,
 				37E84C351D33C046009153DA /* QRCodeViewController.swift in Sources */,
@@ -514,6 +530,7 @@
 				37D247791D36116100181B44 /* UserAccount.swift in Sources */,
 				379186881D2D19B4003FAA92 /* MainViewController.swift in Sources */,
 				3791868C1D2D1A1E003FAA92 /* DiscoverTableViewController.swift in Sources */,
+				370D963F1D38CB24003F4FD4 /* StatusTableViewCell.swift in Sources */,
 				37E15EFD1D3100D1007F9B8D /* UIBarButtonItem+Category.swift in Sources */,
 				373BA2281D2FDE0800B7725C /* UIView+AutoLayout.swift in Sources */,
 				37E84C301D33AFE9009153DA /* PopupMenuAnimator.swift in Sources */,
@@ -523,9 +540,12 @@
 				373BA2261D2FD50C00B7725C /* VisitorView.swift in Sources */,
 				3769C7BC1D15308D00BD14F2 /* AppDelegate.swift in Sources */,
 				37E15F011D310C56007F9B8D /* TitleButton.swift in Sources */,
+				370D96411D38F504003F4FD4 /* UILabel+Category.swift in Sources */,
+				370D96431D38F843003F4FD4 /* UIButton+Category.swift in Sources */,
 				37D4DFEC1D37BCBF0073DCB3 /* Status.swift in Sources */,
 				37D2477E1D37798D00181B44 /* NewFeaturesCollectionViewController.swift in Sources */,
 				370A47391D350CB90014E4CF /* NetWorkTools.swift in Sources */,
+				370D963B1D38B599003F4FD4 /* User.swift in Sources */,
 				379186951D2D3438003FAA92 /* NullViewController.swift in Sources */,
 				37E15F081D312E38007F9B8D /* PopupMenuPresentationController.swift in Sources */,
 				37E15F0A1D312FC5007F9B8D /* PopupViewController.swift in Sources */,
