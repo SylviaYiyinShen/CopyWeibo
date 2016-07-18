@@ -13,6 +13,11 @@ let HOME_CELL_ID = "HOME_CELL_ID"
 
 class HomeTableViewController: BaseTableViewController{
     
+    //key:status id, value: height of row
+    var rowHeightCache: [Int:CGFloat] = [Int:CGFloat]()
+    override func didReceiveMemoryWarning() {
+        rowHeightCache.removeAll()
+    }
     
     var statuses :[Status]?{
     
@@ -52,10 +57,11 @@ class HomeTableViewController: BaseTableViewController{
         
         tableView.registerClass(StatusTableViewCell.self, forCellReuseIdentifier: HOME_CELL_ID)
         
-        tableView.rowHeight = 200
-//        tableView.estimatedRowHeight = 200
+//        tableView.rowHeight = 200
+      //  tableView.estimatedRowHeight = 200
+    //tableView.rowHeight = 300
 //        tableView.rowHeight = UITableViewAutomaticDimension
-//        tableView.separatorStyle = UITableViewCellSeparatorStyle.None
+        tableView.separatorStyle = UITableViewCellSeparatorStyle.None
         
         
         //load data for weibo posts
@@ -170,6 +176,8 @@ extension HomeTableViewController{
         return statuses?.count ?? 0
     }
 
+
+    
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCellWithIdentifier(HOME_CELL_ID, forIndexPath: indexPath) as! StatusTableViewCell
@@ -179,6 +187,26 @@ extension HomeTableViewController{
         cell.status = status
         
         return cell
+    }
+    
+    override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        //get row
+        let status = statuses![indexPath.row]
+        
+        //check the row if exists in cache
+        if let rowHeight = rowHeightCache[status.id] {
+        
+            return rowHeight
+        }
+        
+        //get the cell
+        let cell = tableView.dequeueReusableCellWithIdentifier(HOME_CELL_ID) as! StatusTableViewCell
+        //get the hight 
+        let rowHeight = cell.rowHeight(status)
+        //store in cache
+        rowHeightCache[status.id]=rowHeight
+        
+        return rowHeight
     }
 
 

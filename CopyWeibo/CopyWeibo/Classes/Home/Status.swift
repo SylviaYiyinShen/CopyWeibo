@@ -32,10 +32,10 @@ class Status: NSObject {
             //should be trimmed  e.g.   <a href="sdfsdfsdf">Source</a>
             if let str = source{
                 
-                let startLocation = (str as NSString).rangeOfString(">").location + 1
-                
-                let length = (str as NSString).rangeOfString("<", options: NSStringCompareOptions.BackwardsSearch).location - startLocation
-                source = "from:" + (str as NSString).substringWithRange(NSMakeRange(startLocation, length))
+            
+                //let startLocation = (str as NSString).rangeOfString(">").location + 1
+                //let length = (str as NSString).rangeOfString("<", options: NSStringCompareOptions.BackwardsSearch).location - startLocation
+                //source = "from:" + (str as NSString).substringWithRange(NSMakeRange(startLocation, length))
             
             }
             
@@ -99,7 +99,7 @@ class Status: NSObject {
     class func cacheStatusImages(list:[Status],finished: (models:[Status]?,error:NSError?)->()){
         
         //check loaded thumbnail
-        //print("!!!!!=========".cacheDir())
+        print("!!!!!=========".cacheDir())
         
         //create group
         let group = dispatch_group_create()
@@ -107,17 +107,28 @@ class Status: NSObject {
         
         
         for status in list{
+            
+            
+            guard let urls = status.storedPicURLS else{
+                
+                continue
+            }
+            
+            
             for imageURL in status.storedPicURLS!{
+                
+               
+                
                 
                 //add to group
                 dispatch_group_enter(group)
                 SDWebImageManager.sharedManager().downloadImageWithURL(imageURL, options: SDWebImageOptions(rawValue:0), progress: nil, completed: { (_, _, _, _, _) in
-                    
+                    print("---------completed")
                 })
                 //print(imageURL)
                 //quit group
                 dispatch_group_leave(group)
-                print("---------completed")
+                
             }
     
         }
