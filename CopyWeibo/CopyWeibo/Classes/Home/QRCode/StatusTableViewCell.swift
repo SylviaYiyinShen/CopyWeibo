@@ -15,6 +15,7 @@ class StatusTableViewCell: UITableViewCell {
     
     var pictureWidthCons: NSLayoutConstraint?
     var pictureHeightCons: NSLayoutConstraint?
+    var pictureTopCons: NSLayoutConstraint?
     
     var status: Status?
         {
@@ -32,6 +33,7 @@ class StatusTableViewCell: UITableViewCell {
             //1.2 set size of picture view
             pictureWidthCons?.constant = size.width
             pictureHeightCons?.constant = size.height
+            pictureTopCons?.constant = size.height == 0 ? 0 : 10
 
         }
     }
@@ -46,7 +48,9 @@ class StatusTableViewCell: UITableViewCell {
 
     }
 
-    private func setupUI()
+    
+    //not private -> for overriding in forward cell view
+    func setupUI()
     {
         // 1.add components
         contentView.addSubview(headerView)
@@ -62,11 +66,11 @@ class StatusTableViewCell: UITableViewCell {
 
         contentLabel.xmg_AlignVertical(type: XMG_AlignType.BottomLeft, referView:headerView, size: nil, offset: CGPoint(x: 10, y: 10))
         
-        let cons = pictureView.xmg_AlignVertical(type: XMG_AlignType.BottomLeft, referView: contentLabel, size: CGSizeZero,offset: CGPoint(x: 0, y: 10))
-        
-        pictureWidthCons = pictureView.xmg_Constraint(cons, attribute: NSLayoutAttribute.Width)
-        pictureHeightCons = pictureView.xmg_Constraint(cons, attribute: NSLayoutAttribute.Height)
-        
+//        let cons = pictureView.xmg_AlignVertical(type: XMG_AlignType.BottomLeft, referView: contentLabel, size: CGSizeZero,offset: CGPoint(x: 0, y: 10))
+//        
+//        pictureWidthCons = pictureView.xmg_Constraint(cons, attribute: NSLayoutAttribute.Width)
+//        pictureHeightCons = pictureView.xmg_Constraint(cons, attribute: NSLayoutAttribute.Height)
+//        
         
         
         footerView.xmg_AlignVertical(type: XMG_AlignType.BottomLeft, referView: pictureView, size: CGSize(width: width, height: 44), offset: CGPoint(x: -10, y: 10))
@@ -92,7 +96,7 @@ class StatusTableViewCell: UITableViewCell {
     // MARK: - lazy components
     
     private lazy var headerView: StatusTableHeaderView = StatusTableHeaderView()
-    private lazy var contentLabel: UILabel =
+    lazy var contentLabel: UILabel =
     {
         let label = UILabel.createLabel(UIColor.darkGrayColor(), fontSize: 14)
         label.numberOfLines = 0
@@ -102,9 +106,9 @@ class StatusTableViewCell: UITableViewCell {
     
     
  
-    private lazy var pictureView: StatusTableViewPictureView = StatusTableViewPictureView()
+    lazy var pictureView: StatusTableViewPictureView = StatusTableViewPictureView()
     /// footer view
-    private lazy var footerView: StatusTableViewFooterView = StatusTableViewFooterView()
+    lazy var footerView: StatusTableViewFooterView = StatusTableViewFooterView()
 
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")

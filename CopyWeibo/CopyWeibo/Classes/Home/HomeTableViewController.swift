@@ -55,12 +55,8 @@ class HomeTableViewController: BaseTableViewController{
         
         //register cell for the table view
         
-        tableView.registerClass(StatusTableViewCell.self, forCellReuseIdentifier: HOME_CELL_ID)
-        
-//        tableView.rowHeight = 200
-      //  tableView.estimatedRowHeight = 200
-    //tableView.rowHeight = 300
-//        tableView.rowHeight = UITableViewAutomaticDimension
+        //tableView.registerClass(StatusTableViewCell.self, forCellReuseIdentifier: HOME_CELL_ID)
+        tableView.registerClass(StatusNormalTableViewCell.self, forCellReuseIdentifier: HOME_CELL_ID)
         tableView.separatorStyle = UITableViewCellSeparatorStyle.None
         
         
