@@ -10,8 +10,17 @@ import UIKit
 
 class StatusForwardTableViewCell: StatusTableViewCell {
     
-    
-    
+    //will not overwrite super
+    override var status: Status?{
+        didSet{
+            
+                let name = status?.retweeted_status?.user?.name ?? ""
+                let text = status?.retweeted_status?.text ?? ""
+                forwardlabel.text = name + ": " + text
+        
+        }
+
+    }
     
     override func setupUI(){
         super.setupUI()
@@ -24,7 +33,7 @@ class StatusForwardTableViewCell: StatusTableViewCell {
             , offset: CGPoint(x: -10, y: 10))
         forwardBackgound.xmg_AlignVertical(type: XMG_AlignType.TopRight, referView: footerView, size: nil)
         
-        forwardlabel.text = "this is the forward content"
+
         forwardlabel.xmg_AlignInner(type: XMG_AlignType.TopLeft, referView: forwardBackgound, size: nil,offset: CGPoint(x: 10, y: 10))
         
         let cons = pictureView.xmg_AlignVertical(type: XMG_AlignType.BottomLeft, referView: forwardlabel, size: CGSizeZero,offset: CGPoint(x: 0, y: 10))

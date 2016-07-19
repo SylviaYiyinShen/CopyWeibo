@@ -22,10 +22,11 @@ class StatusTableViewCell: UITableViewCell {
         didSet{
             
             headerView.status = status
-            pictureView.status = status
+  
             contentLabel.text = status?.text
             
-
+            pictureView.status = status?.retweeted_status != nil ? status?.retweeted_status :status
+            
             
             //set layout constraint of pictureview
             //1.1 calculate size(requires status model)

@@ -68,6 +68,13 @@ class Status: NSObject {
     
     var user: User?
     
+    var retweeted_status: Status?
+    var retweeted_storedPicURLS: [NSURL]?{
+    
+        return retweeted_status != nil ? retweeted_status?.storedPicURLS: storedPicURLS
+    
+    }
+    
     
     class func loadStatuses(finished: (models:[Status]?,error:NSError?)->()){
         
@@ -109,13 +116,13 @@ class Status: NSObject {
         for status in list{
             
             
-            guard let urls = status.storedPicURLS else{
+            guard (status.retweeted_storedPicURLS) != nil else{
                 
                 continue
             }
             
             
-            for imageURL in status.storedPicURLS!{
+            for imageURL in status.retweeted_storedPicURLS!{
                 
                
                 
@@ -174,6 +181,14 @@ class Status: NSObject {
             return
             
         }
+        
+        //check if it is the retweeted 
+        if "retweeted_status"  == key{
+            retweeted_status =  Status(dict: value as! [String:AnyObject])
+            return
+        
+        }
+        
         super.setValue(value, forKey: key)
         
         

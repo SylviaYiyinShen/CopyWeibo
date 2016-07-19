@@ -11,6 +11,18 @@ import AFNetworking
 
 let HOME_CELL_ID = "HOME_CELL_ID"
 
+enum StatusTableViewCellIdentifier : String{
+    
+    case NormalCell = "NormalCell"
+    case ForwardCell = "ForwardCell"
+    
+    static func cellID(status:Status)->String{
+    
+        return status.retweeted_status != nil ? ForwardCell.rawValue : NormalCell.rawValue
+    }
+
+}
+
 class HomeTableViewController: BaseTableViewController{
     
     //key:status id, value: height of row
@@ -53,10 +65,11 @@ class HomeTableViewController: BaseTableViewController{
         
         
         
-        //register cell for the table view
+        //register two cellc for the table view
         
         //tableView.registerClass(StatusTableViewCell.self, forCellReuseIdentifier: HOME_CELL_ID)
-        tableView.registerClass(StatusNormalTableViewCell.self, forCellReuseIdentifier: HOME_CELL_ID)
+        tableView.registerClass(StatusNormalTableViewCell.self, forCellReuseIdentifier: StatusTableViewCellIdentifier.NormalCell.rawValue)
+        tableView.registerClass(StatusForwardTableViewCell.self, forCellReuseIdentifier: StatusTableViewCellIdentifier.ForwardCell.rawValue)
         tableView.separatorStyle = UITableViewCellSeparatorStyle.None
         
         
@@ -176,10 +189,10 @@ extension HomeTableViewController{
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCellWithIdentifier(HOME_CELL_ID, forIndexPath: indexPath) as! StatusTableViewCell
+        
         let status = statuses![indexPath.row]
-//        cell.textLabel?.text =  status.text
-        //cell.textLabel?.text =  status.user?.name
+        let cell = tableView.dequeueReusableCellWithIdentifier(StatusTableViewCellIdentifier.cellID(status), forIndexPath: indexPath) as! StatusTableViewCell
+
         cell.status = status
         
         return cell
@@ -196,7 +209,7 @@ extension HomeTableViewController{
         }
         
         //get the cell
-        let cell = tableView.dequeueReusableCellWithIdentifier(HOME_CELL_ID) as! StatusTableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier(StatusTableViewCellIdentifier.cellID(status)) as! StatusTableViewCell
         //get the hight 
         let rowHeight = cell.rowHeight(status)
         //store in cache
