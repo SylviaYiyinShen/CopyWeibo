@@ -34,6 +34,7 @@ class StatusTableViewPictureView: UICollectionView {
     private func setupPictureView(){
         registerClass(PictureViewCell.self, forCellWithReuseIdentifier: PICTURE_CELL_ID)
         dataSource = self
+        delegate = self
         
         //set margin of the cells
         pictureLayout.minimumInteritemSpacing = 10
@@ -103,7 +104,13 @@ class StatusTableViewPictureView: UICollectionView {
         var imageUrl: NSURL?{
             
             didSet{
+                
                 iconImageView.setImageWithURL(imageUrl!)
+                //check if it is gif
+                if (imageUrl!.absoluteString as NSString).pathExtension.lowercaseString == "gif"{
+                
+                    gifImageView.hidden = false
+                }
                 
             }
             
@@ -119,10 +126,26 @@ class StatusTableViewPictureView: UICollectionView {
         
         // MARK: -cell lazy load
         private lazy var iconImageView:UIImageView = UIImageView()
+        private lazy var gifImageView:UIImageView = {
+            
+            let imageView = UIImageView(image:UIImage(named:"avatar_vgirl"))
+            imageView.hidden = true
+            
+            return imageView
+            
+            
+            }()
+        
         
         private func setupUI(){
             contentView.addSubview(iconImageView)
+            
+            iconImageView.addSubview(gifImageView)
+            
+            gifImageView.xmg_AlignInner(type: XMG_AlignType.BottomRight, referView: iconImageView, size: nil)
+            
             iconImageView.xmg_Fill(contentView)
+            
             
             
         }
@@ -136,8 +159,12 @@ class StatusTableViewPictureView: UICollectionView {
   
 }
 
+let PictureSelectedNotice = "PictureSelectedNotice"
+//key of the selected picture for notice
+let PictureSelectedIndexKey = "PictureSelectedIndexKey"
+let PictureSelectedURLKey = "PictureSelectedURLKey"
 
-extension StatusTableViewPictureView: UICollectionViewDataSource {
+extension StatusTableViewPictureView: UICollectionViewDataSource, UICollectionViewDelegate {
     
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return status?.storedPicURLS?.count ?? 0
@@ -151,6 +178,15 @@ extension StatusTableViewPictureView: UICollectionViewDataSource {
         cell.imageUrl = status?.storedPicURLS![indexPath.item]
         //3. return
         return cell
+        
+        
+    }
+    
+    func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+        
+        //let largeURL = status?.storedLargePicURLS![indexPath.item]
+        let info = [PictureSelectedIndexKey: indexPath, PictureSelectedURLKey : status!.storedLargePicURLS!]
+        NSNotificationCenter.defaultCenter().postNotificationName(PictureSelectedNotice, object: self, userInfo: info)
         
         
     }

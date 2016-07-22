@@ -21,6 +21,8 @@ class StatusTableViewFooterView: UIView {
         private func setupUI()
         {
             
+            
+            
             backgroundColor = UIColor(white: 0.2, alpha: 0.5)
             
             // 1.add child components

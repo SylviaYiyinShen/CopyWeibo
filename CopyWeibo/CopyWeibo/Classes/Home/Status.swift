@@ -42,19 +42,23 @@ class Status: NSObject {
         }
     }
     
-    //array of all the pictures of the post
+    //array of all thumbnails of the pictures of the post
     var pic_urls: [[String: AnyObject]]?{
         didSet{
             
             storedPicURLS = [NSURL]()
-            
+            storedLargePicURLS = [NSURL]()
             //convert string to url, store in an array
             for dict in pic_urls!{
             
-                if let urlStr = dict["thumbnail_pic"]{
-                    storedPicURLS?.append(NSURL(string:urlStr as! String)!)
+                if let urlStr = dict["thumbnail_pic"] as? String{
+                    //store thumbnail url
+                    storedPicURLS?.append(NSURL(string:urlStr)!)
                     
-                
+                    //store large picture urls
+                    let largeUrlStr = urlStr.stringByReplacingOccurrencesOfString("thumbnail", withString: "large")
+                    
+                    storedLargePicURLS?.append(NSURL(string:largeUrlStr)!)
                 }
             
             }
@@ -63,7 +67,8 @@ class Status: NSObject {
         }
     }
     //url array of the imgs
-    var storedPicURLS:[NSURL]?
+    var storedPicURLS:[NSURL]?//thumbnail
+    var storedLargePicURLS:[NSURL]?//large picture
     
     
     var user: User?
@@ -74,13 +79,24 @@ class Status: NSObject {
         return retweeted_status != nil ? retweeted_status?.storedPicURLS: storedPicURLS
     
     }
+    var retweeted_storedLargePicURLS:[NSURL]?{
     
+        return retweeted_status != nil ? retweeted_status?.storedLargePicURLS: storedLargePicURLS
+    }
     
-    class func loadStatuses(finished: (models:[Status]?,error:NSError?)->()){
+    class func loadStatuses(since_id:Int,max_id:Int,finished: (models:[Status]?,error:NSError?)->()){
         
         let path = "2/statuses/home_timeline.json"
-        let params = ["access_token":UserAccount.loadAccount()!.access_token!]
+        var params = ["access_token":UserAccount.loadAccount()!.access_token!]
         
+        if since_id>0{
+            params["since_id"] =  "\(since_id)"
+        }
+        
+        if max_id>0{
+            params["max_id"] = "\(max_id-1)"
+        
+        }
         
         NetWorkTools.sharedInstance().GET(path, parameters: params,
             success: { (_, JSON) in
@@ -105,8 +121,17 @@ class Status: NSObject {
     
     class func cacheStatusImages(list:[Status],finished: (models:[Status]?,error:NSError?)->()){
         
-        //check loaded thumbnail
-        print("!!!!!=========".cacheDir())
+        //check loaded thumbnail in local folder
+        //print("!!!!!=========".cacheDir())
+        
+        
+        if list.count == 0 {
+        
+            finished(models: list, error: nil)
+            return
+        
+        }
+        
         
         //create group
         let group = dispatch_group_create()

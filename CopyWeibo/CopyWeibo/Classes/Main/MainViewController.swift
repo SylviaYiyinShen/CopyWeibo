@@ -127,7 +127,9 @@ class MainViewController: UITabBarController {
     // MARK: composebutton click event control
     //should not be private
     func composeBtnClick(){
-    
+        let vc = ComposeViewController()
+        let navigation = UINavigationController(rootViewController: vc)
+        presentViewController(navigation, animated: true, completion: nil)
     
     }
     // MARK: -Lazy loading for the add button

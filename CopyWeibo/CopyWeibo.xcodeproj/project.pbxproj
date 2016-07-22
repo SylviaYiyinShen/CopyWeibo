@@ -14,9 +14,13 @@
 		370D96411D38F504003F4FD4 /* UILabel+Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 370D96401D38F504003F4FD4 /* UILabel+Category.swift */; };
 		370D96431D38F843003F4FD4 /* UIButton+Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 370D96421D38F843003F4FD4 /* UIButton+Category.swift */; };
 		370D96451D390933003F4FD4 /* NSDate+Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 370D96441D390933003F4FD4 /* NSDate+Category.swift */; };
+		370E177A1D3E809100FD3E87 /* HomeRefreshView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 370E17791D3E809100FD3E87 /* HomeRefreshView.xib */; };
+		370E177C1D3E84EE00FD3E87 /* HomeRefreshControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 370E177B1D3E84EE00FD3E87 /* HomeRefreshControl.swift */; };
 		3715FD8E1D3CFFAE00095612 /* StatusTableViewFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3715FD8D1D3CFFAE00095612 /* StatusTableViewFooterView.swift */; };
 		3715FD901D3D004C00095612 /* StatusTableViewHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3715FD8F1D3D004C00095612 /* StatusTableViewHeaderView.swift */; };
 		3715FD921D3D034200095612 /* StatusTableViewPictureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3715FD911D3D034200095612 /* StatusTableViewPictureView.swift */; };
+		372E980C1D41FFC90064BC36 /* PictureBrowserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 372E980B1D41FFC90064BC36 /* PictureBrowserCell.swift */; };
+		372E980F1D423C000064BC36 /* ComposeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 372E980E1D423C000064BC36 /* ComposeViewController.swift */; };
 		373BA2241D2FD19300B7725C /* BaseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 373BA2231D2FD19300B7725C /* BaseTableViewController.swift */; };
 		373BA2261D2FD50C00B7725C /* VisitorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 373BA2251D2FD50C00B7725C /* VisitorView.swift */; };
 		373BA2281D2FDE0800B7725C /* UIView+AutoLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 373BA2271D2FDE0800B7725C /* UIView+AutoLayout.swift */; };
@@ -43,6 +47,7 @@
 		37E15F061D312608007F9B8D /* PopupMenuViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 37E15F051D312608007F9B8D /* PopupMenuViewController.storyboard */; };
 		37E15F081D312E38007F9B8D /* PopupMenuPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37E15F071D312E38007F9B8D /* PopupMenuPresentationController.swift */; };
 		37E15F0A1D312FC5007F9B8D /* PopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37E15F091D312FC5007F9B8D /* PopupViewController.swift */; };
+		37E7E78C1D40DBEE002649DE /* PictureBrowserController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37E7E78B1D40DBEE002649DE /* PictureBrowserController.swift */; };
 		37E84C2E1D33A8BE009153DA /* HomeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 379186891D2D19D8003FAA92 /* HomeTableViewController.swift */; };
 		37E84C301D33AFE9009153DA /* PopupMenuAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37E84C2F1D33AFE9009153DA /* PopupMenuAnimator.swift */; };
 		37E84C331D33BF32009153DA /* QRCodeViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 37E84C321D33BF32009153DA /* QRCodeViewController.storyboard */; };
@@ -75,9 +80,13 @@
 		370D96401D38F504003F4FD4 /* UILabel+Category.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UILabel+Category.swift"; sourceTree = "<group>"; };
 		370D96421D38F843003F4FD4 /* UIButton+Category.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIButton+Category.swift"; sourceTree = "<group>"; };
 		370D96441D390933003F4FD4 /* NSDate+Category.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSDate+Category.swift"; sourceTree = "<group>"; };
+		370E17791D3E809100FD3E87 /* HomeRefreshView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeRefreshView.xib; sourceTree = "<group>"; };
+		370E177B1D3E84EE00FD3E87 /* HomeRefreshControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeRefreshControl.swift; sourceTree = "<group>"; };
 		3715FD8D1D3CFFAE00095612 /* StatusTableViewFooterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusTableViewFooterView.swift; sourceTree = "<group>"; };
 		3715FD8F1D3D004C00095612 /* StatusTableViewHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusTableViewHeaderView.swift; sourceTree = "<group>"; };
 		3715FD911D3D034200095612 /* StatusTableViewPictureView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusTableViewPictureView.swift; sourceTree = "<group>"; };
+		372E980B1D41FFC90064BC36 /* PictureBrowserCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PictureBrowserCell.swift; sourceTree = "<group>"; };
+		372E980E1D423C000064BC36 /* ComposeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComposeViewController.swift; sourceTree = "<group>"; };
 		373BA2231D2FD19300B7725C /* BaseTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseTableViewController.swift; sourceTree = "<group>"; };
 		373BA2251D2FD50C00B7725C /* VisitorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VisitorView.swift; sourceTree = "<group>"; };
 		373BA2271D2FDE0800B7725C /* UIView+AutoLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+AutoLayout.swift"; sourceTree = "<group>"; };
@@ -110,6 +119,7 @@
 		37E15F051D312608007F9B8D /* PopupMenuViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = PopupMenuViewController.storyboard; sourceTree = "<group>"; };
 		37E15F071D312E38007F9B8D /* PopupMenuPresentationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopupMenuPresentationController.swift; sourceTree = "<group>"; };
 		37E15F091D312FC5007F9B8D /* PopupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopupViewController.swift; sourceTree = "<group>"; };
+		37E7E78B1D40DBEE002649DE /* PictureBrowserController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PictureBrowserController.swift; sourceTree = "<group>"; };
 		37E84C2F1D33AFE9009153DA /* PopupMenuAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopupMenuAnimator.swift; sourceTree = "<group>"; };
 		37E84C321D33BF32009153DA /* QRCodeViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = QRCodeViewController.storyboard; sourceTree = "<group>"; };
 		37E84C341D33C046009153DA /* QRCodeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QRCodeViewController.swift; sourceTree = "<group>"; };
@@ -151,6 +161,14 @@
 				37D247781D36116100181B44 /* UserAccount.swift */,
 			);
 			path = OAuth;
+			sourceTree = "<group>";
+		};
+		372E980D1D423BE90064BC36 /* Compose */ = {
+			isa = PBXGroup;
+			children = (
+				372E980E1D423C000064BC36 /* ComposeViewController.swift */,
+			);
+			path = Compose;
 			sourceTree = "<group>";
 		};
 		3769C7AF1D15308D00BD14F2 = {
@@ -207,6 +225,7 @@
 		3791867B1D2D10F7003FAA92 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				372E980D1D423BE90064BC36 /* Compose */,
 				37D2477C1D37794400181B44 /* NewFeatures */,
 				370A47351D34E2D00014E4CF /* OAuth */,
 				3791867C1D2D10F8003FAA92 /* Common */,
@@ -242,6 +261,7 @@
 		3791867E1D2D10F8003FAA92 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				37E7E78A1D40DBBB002649DE /* PictureBrowser */,
 				37E84C311D33BD6A009153DA /* QRCode */,
 				379186891D2D19D8003FAA92 /* HomeTableViewController.swift */,
 				37E15F021D312532007F9B8D /* PopupMenu */,
@@ -253,6 +273,8 @@
 				37DC98CF1D3D316200F41620 /* StatusNormalTableViewCell.swift */,
 				3715FD911D3D034200095612 /* StatusTableViewPictureView.swift */,
 				37DC98CD1D3D274E00F41620 /* StatusForwardTableViewCell.swift */,
+				370E17791D3E809100FD3E87 /* HomeRefreshView.xib */,
+				370E177B1D3E84EE00FD3E87 /* HomeRefreshControl.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -322,6 +344,15 @@
 				37E84C2F1D33AFE9009153DA /* PopupMenuAnimator.swift */,
 			);
 			path = PopupMenu;
+			sourceTree = "<group>";
+		};
+		37E7E78A1D40DBBB002649DE /* PictureBrowser */ = {
+			isa = PBXGroup;
+			children = (
+				37E7E78B1D40DBEE002649DE /* PictureBrowserController.swift */,
+				372E980B1D41FFC90064BC36 /* PictureBrowserCell.swift */,
+			);
+			path = PictureBrowser;
 			sourceTree = "<group>";
 		};
 		37E84C311D33BD6A009153DA /* QRCode */ = {
@@ -462,6 +493,7 @@
 			files = (
 				37E15F061D312608007F9B8D /* PopupMenuViewController.storyboard in Resources */,
 				379186941D2D3438003FAA92 /* MainVCSettings.json in Resources */,
+				370E177A1D3E809100FD3E87 /* HomeRefreshView.xib in Resources */,
 				3769C7C31D15308D00BD14F2 /* Assets.xcassets in Resources */,
 				37E84C331D33BF32009153DA /* QRCodeViewController.storyboard in Resources */,
 			);
@@ -552,12 +584,14 @@
 				37E84C301D33AFE9009153DA /* PopupMenuAnimator.swift in Sources */,
 				37DC98CE1D3D274E00F41620 /* StatusForwardTableViewCell.swift in Sources */,
 				3715FD8E1D3CFFAE00095612 /* StatusTableViewFooterView.swift in Sources */,
+				370E177C1D3E84EE00FD3E87 /* HomeRefreshControl.swift in Sources */,
 				3791868E1D2D1A2C003FAA92 /* MessageTableViewController.swift in Sources */,
 				37D2477B1D363B6D00181B44 /* String+Category.swift in Sources */,
 				37D247821D378E6700181B44 /* WelcomeViewController.swift in Sources */,
 				373BA2261D2FD50C00B7725C /* VisitorView.swift in Sources */,
 				3769C7BC1D15308D00BD14F2 /* AppDelegate.swift in Sources */,
 				37E15F011D310C56007F9B8D /* TitleButton.swift in Sources */,
+				37E7E78C1D40DBEE002649DE /* PictureBrowserController.swift in Sources */,
 				370D96411D38F504003F4FD4 /* UILabel+Category.swift in Sources */,
 				370D96431D38F843003F4FD4 /* UIButton+Category.swift in Sources */,
 				37DC98D01D3D316200F41620 /* StatusNormalTableViewCell.swift in Sources */,
@@ -565,9 +599,11 @@
 				37D2477E1D37798D00181B44 /* NewFeaturesCollectionViewController.swift in Sources */,
 				370A47391D350CB90014E4CF /* NetWorkTools.swift in Sources */,
 				370D963B1D38B599003F4FD4 /* User.swift in Sources */,
+				372E980C1D41FFC90064BC36 /* PictureBrowserCell.swift in Sources */,
 				379186951D2D3438003FAA92 /* NullViewController.swift in Sources */,
 				3715FD921D3D034200095612 /* StatusTableViewPictureView.swift in Sources */,
 				37E15F081D312E38007F9B8D /* PopupMenuPresentationController.swift in Sources */,
+				372E980F1D423C000064BC36 /* ComposeViewController.swift in Sources */,
 				37E15F0A1D312FC5007F9B8D /* PopupViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

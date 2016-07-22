@@ -62,6 +62,10 @@ class HomeTableViewController: BaseTableViewController{
         //register notification
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(HomeTableViewController.updateTitleBtn), name: PopupWillPresent, object: nil)
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(HomeTableViewController.updateTitleBtn), name: PopupWillDismiss, object: nil)
+        //register notification for picture view
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(showPictureBrowser), name: PictureSelectedNotice, object: nil)
+        
+        
         
         
         
@@ -73,20 +77,69 @@ class HomeTableViewController: BaseTableViewController{
         tableView.separatorStyle = UITableViewCellSeparatorStyle.None
         
         
+        //refresh to load more status
+//        refreshControl = UIRefreshControl()
+//        let refreshChildView = UIView()
+//        refreshChildView.backgroundColor = UIColor.redColor()
+//        refreshChildView.frame = CGRect(x: 0, y: 0, width: 375, height: 60)
+//        refreshControl?.addSubview(refreshChildView)
+        
+        
+        refreshControl = HomeRefreshControl()
+        refreshControl?.addTarget(self, action: #selector(HomeTableViewController.loadData), forControlEvents: UIControlEvents.ValueChanged)
+        
+//        newStatusLabel.hidden = false
+        
         //load data for weibo posts
         loadData()
         
         
     }
+   
     
-    private func loadData(){
-        Status.loadStatuses { (models, error) in
+    var pullUpFlag = false
+    //must not be private, could be @objc
+   @objc private func loadData(){
+    
+    /*retrun the latest 20 status by default
+        since_id: return status bigger than since_id
+        max_id:   smaller than max_idd
+     
+     
+     */
+    
+        //pull down by default
+        var since_id = statuses?.first?.id ?? 0
+        var max_id = 0
+        if pullUpFlag{
+            since_id = 0
+            max_id = statuses?.last?.id ?? 0
+            
+        }
+    
+    Status.loadStatuses(since_id,max_id:max_id){ (models, error) in
             
             if error != nil{
                 return
             
             }
-            self.statuses =  models
+            self.refreshControl?.endRefreshing()
+            
+            //loading more latest statuses
+            if since_id>0{
+                self.statuses = models! + self.statuses!
+                
+                self.showNewStatusCount(models?.count ?? 0)
+            }else if max_id>0{
+                //loading more old statuses
+                self.statuses = self.statuses! + models!
+                
+            }else{
+            
+                self.statuses =  models
+                
+            }
+            
         }
     
     
@@ -100,6 +153,43 @@ class HomeTableViewController: BaseTableViewController{
     }
     
     
+    
+    private func showNewStatusCount(count:Int){
+        newStatusLabel.hidden = false
+        newStatusLabel.text = (count == 0) ? "No new status" : "\(count) new statuses"
+        
+       
+        
+         //set animation
+        
+        /*  has tiny bugs
+        let rect = newStatusLabel.frame
+        UIView.animateWithDuration(2, animations: {
+            UIView.setAnimationRepeatAutoreverses(true)
+            self.newStatusLabel.frame = CGRectOffset(rect, 0, 3*rect.height)
+            
+            }) { (_) in
+            self.newStatusLabel.frame = rect
+        }
+         */
+        
+        
+        UIView.animateWithDuration(2, animations: { 
+            
+            self.newStatusLabel.transform = CGAffineTransformMakeTranslation(0, self.newStatusLabel.frame.height)
+            }) { (_) in
+                
+            UIView.animateWithDuration(2, animations: { 
+                self.newStatusLabel.transform = CGAffineTransformIdentity
+                
+                }, completion: { (_) in
+                    
+                    self.newStatusLabel.hidden = true
+            })
+        }
+        
+    }
+    
     //when notified
     func updateTitleBtn(){
         
@@ -109,15 +199,36 @@ class HomeTableViewController: BaseTableViewController{
     
     
     }
+    
+    func showPictureBrowser(notify:NSNotification){
+        print(notify.userInfo)
+     
+        guard notify.userInfo![PictureSelectedIndexKey] != nil else{
+            print("No indexpath value")
+            return
+        }
+        
+        guard notify.userInfo![PictureSelectedURLKey] != nil else{
+            print("No picture urls value")
+            return
+        }
+        
+        //create picture browser
+        let index = (notify.userInfo![PictureSelectedIndexKey] as! NSIndexPath).item
+        let urls = notify.userInfo![PictureSelectedURLKey] as! [NSURL]
+        let vc = PictureBrowserController(currentIndex:index,pictureURLs:urls)
+        presentViewController(vc, animated: true, completion: nil)
+        
+    
+    
+    }
+    
     private func setupNavigation(){
     
         //1. create navigationBarItem button
         navigationItem.leftBarButtonItem = UIBarButtonItem.createBarItemButton("navigationbar_friendattention",target: self,action: #selector(HomeTableViewController.leftItemClick))
         
         navigationItem.rightBarButtonItem =  UIBarButtonItem.createBarItemButton("navigationbar_pop",target: self,action: #selector(HomeTableViewController.rightItemClick))
-        
-        //navigationItem.leftBarButtonItem = createBarItemButton("navigationbar_friendattention",target: self,action: #selector(HomeTableViewController.leftItemClick))
-        //navigationItem.rightBarButtonItem = createBarItemButton("navigationbar_pop",target: self,action: #selector(HomeTableViewController.rightItemClick))
        
         //2. initialize navigation title button
         let titleBtn =  TitleButton()
@@ -176,6 +287,23 @@ class HomeTableViewController: BaseTableViewController{
         animator.presentFrame =  CGRect(x: 100, y: 56, width: 200, height: 350)
         return animator
     }()
+    
+    
+    private lazy var newStatusLabel: UILabel = {
+        let label = UILabel()
+        label.backgroundColor = UIColor.orangeColor()
+        label.textAlignment =  NSTextAlignment.Center
+        label.font = UIFont.systemFontOfSize(14)
+        label.textColor = UIColor.whiteColor()
+        let height:CGFloat = 44
+        
+        label.frame = CGRect(x: 0, y: 0, width: UIScreen.mainScreen().bounds.width, height: height)
+        //self.tableView.addSubview(label)
+        
+        self.navigationController?.navigationBar.insertSubview(label,atIndex:0)
+        return label
+    
+    }()
 }
 
 extension HomeTableViewController{
@@ -194,6 +322,15 @@ extension HomeTableViewController{
         let cell = tableView.dequeueReusableCellWithIdentifier(StatusTableViewCellIdentifier.cellID(status), forIndexPath: indexPath) as! StatusTableViewCell
 
         cell.status = status
+        
+        
+        // check if reached the last status
+        let count = statuses?.count ?? 0
+        if indexPath.row == (count-1){
+            pullUpFlag = true
+            loadData()
+        }
+        
         
         return cell
     }

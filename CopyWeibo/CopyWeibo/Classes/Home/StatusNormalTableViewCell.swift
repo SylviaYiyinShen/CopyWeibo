@@ -18,8 +18,6 @@ class StatusNormalTableViewCell: StatusTableViewCell {
         pictureWidthCons = pictureView.xmg_Constraint(cons, attribute: NSLayoutAttribute.Width)
         pictureHeightCons = pictureView.xmg_Constraint(cons, attribute: NSLayoutAttribute.Height)
         
-
-        
     }
     
 }
