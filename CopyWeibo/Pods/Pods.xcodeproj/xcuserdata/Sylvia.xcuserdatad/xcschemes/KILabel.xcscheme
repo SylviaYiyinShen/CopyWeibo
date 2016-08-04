@@ -14,10 +14,10 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = '81472374D2C893510DAF8FAD'
-               BlueprintName = 'Pods-CopyWeiboTests'
+               BlueprintIdentifier = '1A3C59C3384DE425D11FA47B'
+               BlueprintName = 'KILabel'
                ReferencedContainer = 'container:Pods.xcodeproj'
-               BuildableName = 'Pods_CopyWeiboTests.framework'>
+               BuildableName = 'KILabel.framework'>
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>

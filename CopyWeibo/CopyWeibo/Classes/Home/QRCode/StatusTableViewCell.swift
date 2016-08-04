@@ -8,6 +8,7 @@
 
 import UIKit
 import SDWebImage
+import KILabel
 
 let PICTURE_CELL_ID = "PICTURE_CELL_ID"
 class StatusTableViewCell: UITableViewCell {
@@ -97,11 +98,27 @@ class StatusTableViewCell: UITableViewCell {
     // MARK: - lazy components
     
     private lazy var headerView: StatusTableHeaderView = StatusTableHeaderView()
-    lazy var contentLabel: UILabel =
+    lazy var contentLabel: KILabel =
     {
-        let label = UILabel.createLabel(UIColor.darkGrayColor(), fontSize: 14)
+        //let label = UILabel.createLabel(UIColor.darkGrayColor(), fontSize: 14)
+        
+        let label = KILabel()
+        label.textColor = UIColor.darkGrayColor()
+        label.font = UIFont.systemFontOfSize(14)
+        
         label.numberOfLines = 0
         label.preferredMaxLayoutWidth = UIScreen.mainScreen().bounds.width - 20
+        
+        
+        //set click listener on url
+        label.urlLinkTapHandler = {
+        
+            (label,string,range) in
+            print(string)
+        
+        }
+        
+        
         return label
         }()
     

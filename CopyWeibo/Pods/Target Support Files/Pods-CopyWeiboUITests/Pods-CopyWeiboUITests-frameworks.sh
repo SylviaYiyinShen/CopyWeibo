@@ -85,11 +85,13 @@ strip_invalid_archs() {
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "Pods-CopyWeiboUITests/AFNetworking.framework"
+  install_framework "Pods-CopyWeiboUITests/KILabel.framework"
   install_framework "Pods-CopyWeiboUITests/SDWebImage.framework"
   install_framework "Pods-CopyWeiboUITests/SVProgressHUD.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "Pods-CopyWeiboUITests/AFNetworking.framework"
+  install_framework "Pods-CopyWeiboUITests/KILabel.framework"
   install_framework "Pods-CopyWeiboUITests/SDWebImage.framework"
   install_framework "Pods-CopyWeiboUITests/SVProgressHUD.framework"
 fi
