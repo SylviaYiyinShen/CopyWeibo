@@ -86,8 +86,32 @@ class Status: NSObject {
     
     class func loadStatuses(since_id:Int,max_id:Int,finished: (models:[Status]?,error:NSError?)->()){
         
+        StatusDAO.loadStatus(since_id, max_id: max_id) { (array,error) in
+            
+            if array != nil{
+                finished(models: nil, error: nil)
+            }
+            
+            if error != nil{
+                finished(models: nil, error: error)
+            
+            }
+            
+            //finished(models: array, error: nil)
+            
+            //get statuses array
+            let models = dict2Model(array!)
+            print(models)
+            //get chache images
+            cacheStatusImages(models, finished: finished)
+
+        }
+        
+        /*
         let path = "2/statuses/home_timeline.json"
         var params = ["access_token":UserAccount.loadAccount()!.access_token!]
+        
+        //StatusDAO.loadCache(since_id, max_id: max_id)
         
         if since_id>0{
             params["since_id"] =  "\(since_id)"
@@ -100,6 +124,9 @@ class Status: NSObject {
         
         NetWorkTools.sharedInstance().GET(path, parameters: params,
             success: { (_, JSON) in
+            
+            StatusDAO.cacheStatuses(JSON!["statuses"] as! [[String:AnyObject]])
+            
             
             //get statuses array
             let models = dict2Model(JSON!["statuses"] as! [[String:AnyObject]])
@@ -115,7 +142,7 @@ class Status: NSObject {
             }) { (_, error) in
                 print(error)
                 finished(models: nil, error: error)
-        }
+        }*/
     
     }
     

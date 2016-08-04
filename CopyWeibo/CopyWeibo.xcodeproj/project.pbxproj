@@ -7,6 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3705A7B61D51ED28002BE686 /* FMDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = 3705A7A91D51ED28002BE686 /* FMDatabase.m */; };
+		3705A7B71D51ED28002BE686 /* FMDatabaseAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 3705A7AB1D51ED28002BE686 /* FMDatabaseAdditions.m */; };
+		3705A7B81D51ED28002BE686 /* FMDatabasePool.m in Sources */ = {isa = PBXBuildFile; fileRef = 3705A7AD1D51ED28002BE686 /* FMDatabasePool.m */; };
+		3705A7B91D51ED28002BE686 /* FMDatabaseQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 3705A7AF1D51ED28002BE686 /* FMDatabaseQueue.m */; };
+		3705A7BA1D51ED28002BE686 /* FMResultSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 3705A7B21D51ED28002BE686 /* FMResultSet.m */; };
+		3705A7BB1D51ED28002BE686 /* FMDatabaseAdditionsVariadic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3705A7B41D51ED28002BE686 /* FMDatabaseAdditionsVariadic.swift */; };
+		3705A7BC1D51ED28002BE686 /* FMDatabaseVariadic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3705A7B51D51ED28002BE686 /* FMDatabaseVariadic.swift */; };
+		3705A7BF1D51ED85002BE686 /* libsqlite3.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 3705A7BE1D51ED85002BE686 /* libsqlite3.0.tbd */; };
+		3705A7C11D51EDB6002BE686 /* SQLiteManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3705A7C01D51EDB6002BE686 /* SQLiteManager.swift */; };
+		3705A7C31D51F5CC002BE686 /* StatusDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3705A7C21D51F5CC002BE686 /* StatusDAO.swift */; };
 		370A47371D34E3010014E4CF /* OAuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 370A47361D34E3010014E4CF /* OAuthViewController.swift */; };
 		370A47391D350CB90014E4CF /* NetWorkTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 370A47381D350CB90014E4CF /* NetWorkTools.swift */; };
 		370D963B1D38B599003F4FD4 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 370D963A1D38B599003F4FD4 /* User.swift */; };
@@ -73,6 +83,23 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3705A7A81D51ED28002BE686 /* FMDatabase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabase.h; sourceTree = "<group>"; };
+		3705A7A91D51ED28002BE686 /* FMDatabase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabase.m; sourceTree = "<group>"; };
+		3705A7AA1D51ED28002BE686 /* FMDatabaseAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabaseAdditions.h; sourceTree = "<group>"; };
+		3705A7AB1D51ED28002BE686 /* FMDatabaseAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabaseAdditions.m; sourceTree = "<group>"; };
+		3705A7AC1D51ED28002BE686 /* FMDatabasePool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabasePool.h; sourceTree = "<group>"; };
+		3705A7AD1D51ED28002BE686 /* FMDatabasePool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabasePool.m; sourceTree = "<group>"; };
+		3705A7AE1D51ED28002BE686 /* FMDatabaseQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabaseQueue.h; sourceTree = "<group>"; };
+		3705A7AF1D51ED28002BE686 /* FMDatabaseQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabaseQueue.m; sourceTree = "<group>"; };
+		3705A7B01D51ED28002BE686 /* FMDB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDB.h; sourceTree = "<group>"; };
+		3705A7B11D51ED28002BE686 /* FMResultSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMResultSet.h; sourceTree = "<group>"; };
+		3705A7B21D51ED28002BE686 /* FMResultSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMResultSet.m; sourceTree = "<group>"; };
+		3705A7B41D51ED28002BE686 /* FMDatabaseAdditionsVariadic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FMDatabaseAdditionsVariadic.swift; sourceTree = "<group>"; };
+		3705A7B51D51ED28002BE686 /* FMDatabaseVariadic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FMDatabaseVariadic.swift; sourceTree = "<group>"; };
+		3705A7BD1D51ED37002BE686 /* Swift-Bridge.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Swift-Bridge.h"; sourceTree = "<group>"; };
+		3705A7BE1D51ED85002BE686 /* libsqlite3.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.0.tbd; path = usr/lib/libsqlite3.0.tbd; sourceTree = SDKROOT; };
+		3705A7C01D51EDB6002BE686 /* SQLiteManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SQLiteManager.swift; sourceTree = "<group>"; };
+		3705A7C21D51F5CC002BE686 /* StatusDAO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusDAO.swift; sourceTree = "<group>"; };
 		370A47361D34E3010014E4CF /* OAuthViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OAuthViewController.swift; sourceTree = "<group>"; };
 		370A47381D350CB90014E4CF /* NetWorkTools.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetWorkTools.swift; sourceTree = "<group>"; };
 		370D963A1D38B599003F4FD4 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
@@ -133,6 +160,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3705A7BF1D51ED85002BE686 /* libsqlite3.0.tbd in Frameworks */,
 				D137C8AB673066F36614315D /* Pods.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -154,6 +182,34 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3705A7A71D51ED28002BE686 /* fmdb */ = {
+			isa = PBXGroup;
+			children = (
+				3705A7A81D51ED28002BE686 /* FMDatabase.h */,
+				3705A7A91D51ED28002BE686 /* FMDatabase.m */,
+				3705A7AA1D51ED28002BE686 /* FMDatabaseAdditions.h */,
+				3705A7AB1D51ED28002BE686 /* FMDatabaseAdditions.m */,
+				3705A7AC1D51ED28002BE686 /* FMDatabasePool.h */,
+				3705A7AD1D51ED28002BE686 /* FMDatabasePool.m */,
+				3705A7AE1D51ED28002BE686 /* FMDatabaseQueue.h */,
+				3705A7AF1D51ED28002BE686 /* FMDatabaseQueue.m */,
+				3705A7B01D51ED28002BE686 /* FMDB.h */,
+				3705A7B11D51ED28002BE686 /* FMResultSet.h */,
+				3705A7B21D51ED28002BE686 /* FMResultSet.m */,
+				3705A7B31D51ED28002BE686 /* Swift extensions */,
+			);
+			path = fmdb;
+			sourceTree = "<group>";
+		};
+		3705A7B31D51ED28002BE686 /* Swift extensions */ = {
+			isa = PBXGroup;
+			children = (
+				3705A7B41D51ED28002BE686 /* FMDatabaseAdditionsVariadic.swift */,
+				3705A7B51D51ED28002BE686 /* FMDatabaseVariadic.swift */,
+			);
+			path = "Swift extensions";
+			sourceTree = "<group>";
+		};
 		370A47351D34E2D00014E4CF /* OAuth */ = {
 			isa = PBXGroup;
 			children = (
@@ -198,6 +254,7 @@
 			children = (
 				3791867B1D2D10F7003FAA92 /* Classes */,
 				3769C7BB1D15308D00BD14F2 /* AppDelegate.swift */,
+				3705A7BD1D51ED37002BE686 /* Swift-Bridge.h */,
 				3769C7C21D15308D00BD14F2 /* Assets.xcassets */,
 				3769C7C71D15308D00BD14F2 /* Info.plist */,
 			);
@@ -266,6 +323,7 @@
 				379186891D2D19D8003FAA92 /* HomeTableViewController.swift */,
 				37E15F021D312532007F9B8D /* PopupMenu */,
 				37D4DFEB1D37BCBF0073DCB3 /* Status.swift */,
+				3705A7C21D51F5CC002BE686 /* StatusDAO.swift */,
 				3715FD8D1D3CFFAE00095612 /* StatusTableViewFooterView.swift */,
 				3715FD8F1D3D004C00095612 /* StatusTableViewHeaderView.swift */,
 				370D963A1D38B599003F4FD4 /* User.swift */,
@@ -309,6 +367,8 @@
 		379186821D2D10F8003FAA92 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				3705A7C01D51EDB6002BE686 /* SQLiteManager.swift */,
+				3705A7A71D51ED28002BE686 /* fmdb */,
 				370D96441D390933003F4FD4 /* NSDate+Category.swift */,
 				373BA2271D2FDE0800B7725C /* UIView+AutoLayout.swift */,
 				370A47381D350CB90014E4CF /* NetWorkTools.swift */,
@@ -367,6 +427,7 @@
 		B90CB58437BEB624CFC9006F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				3705A7BE1D51ED85002BE686 /* libsqlite3.0.tbd */,
 				4A8387EED7CC0A9E572239B1 /* Pods.framework */,
 			);
 			name = Frameworks;
@@ -569,12 +630,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				370D96451D390933003F4FD4 /* NSDate+Category.swift in Sources */,
+				3705A7B61D51ED28002BE686 /* FMDatabase.m in Sources */,
 				379186901D2D1A3C003FAA92 /* ProfileTableViewController.swift in Sources */,
 				3791868A1D2D19D8003FAA92 /* HomeTableViewController.swift in Sources */,
 				37E84C351D33C046009153DA /* QRCodeViewController.swift in Sources */,
 				370A47371D34E3010014E4CF /* OAuthViewController.swift in Sources */,
 				373BA2241D2FD19300B7725C /* BaseTableViewController.swift in Sources */,
 				37D247791D36116100181B44 /* UserAccount.swift in Sources */,
+				3705A7B71D51ED28002BE686 /* FMDatabaseAdditions.m in Sources */,
 				379186881D2D19B4003FAA92 /* MainViewController.swift in Sources */,
 				3791868C1D2D1A1E003FAA92 /* DiscoverTableViewController.swift in Sources */,
 				370D963F1D38CB24003F4FD4 /* StatusTableViewCell.swift in Sources */,
@@ -596,13 +659,20 @@
 				370D96431D38F843003F4FD4 /* UIButton+Category.swift in Sources */,
 				37DC98D01D3D316200F41620 /* StatusNormalTableViewCell.swift in Sources */,
 				37D4DFEC1D37BCBF0073DCB3 /* Status.swift in Sources */,
+				3705A7BA1D51ED28002BE686 /* FMResultSet.m in Sources */,
 				37D2477E1D37798D00181B44 /* NewFeaturesCollectionViewController.swift in Sources */,
 				370A47391D350CB90014E4CF /* NetWorkTools.swift in Sources */,
 				370D963B1D38B599003F4FD4 /* User.swift in Sources */,
+				3705A7BC1D51ED28002BE686 /* FMDatabaseVariadic.swift in Sources */,
 				372E980C1D41FFC90064BC36 /* PictureBrowserCell.swift in Sources */,
 				379186951D2D3438003FAA92 /* NullViewController.swift in Sources */,
 				3715FD921D3D034200095612 /* StatusTableViewPictureView.swift in Sources */,
+				3705A7C31D51F5CC002BE686 /* StatusDAO.swift in Sources */,
+				3705A7BB1D51ED28002BE686 /* FMDatabaseAdditionsVariadic.swift in Sources */,
 				37E15F081D312E38007F9B8D /* PopupMenuPresentationController.swift in Sources */,
+				3705A7B91D51ED28002BE686 /* FMDatabaseQueue.m in Sources */,
+				3705A7B81D51ED28002BE686 /* FMDatabasePool.m in Sources */,
+				3705A7C11D51EDB6002BE686 /* SQLiteManager.swift in Sources */,
 				372E980F1D423C000064BC36 /* ComposeViewController.swift in Sources */,
 				37E15F0A1D312FC5007F9B8D /* PopupViewController.swift in Sources */,
 			);
@@ -733,6 +803,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Sylvia.CopyWeibo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "CopyWeibo/Swift-Bridge.h";
 			};
 			name = Debug;
 		};
@@ -747,6 +818,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Sylvia.CopyWeibo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "CopyWeibo/Swift-Bridge.h";
 			};
 			name = Release;
 		};

@@ -41,6 +41,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
         
+        //local database
+        SQLiteManager.shareManager().openDB("weibo.sqlite")
+        
+        
+        
         //register notification
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(AppDelegate.switchRootViewController(_:)), name: SwitchRootViewControllerKey, object: nil)
         

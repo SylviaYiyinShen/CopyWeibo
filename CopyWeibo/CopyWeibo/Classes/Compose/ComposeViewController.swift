@@ -11,7 +11,7 @@ import SVProgressHUD
 
 class ComposeViewController: UIViewController {
 
-    var tabBarBottonCons:NSLayoutConstraint?
+    var tabBarBottomCons:NSLayoutConstraint?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,7 +42,7 @@ class ComposeViewController: UIViewController {
         // 667 - 409 = 258
         // 667 - 667 = 0
         let height = UIScreen.mainScreen().bounds.height
-        tabBarBottonCons?.constant = -(height - rect.origin.y)
+        tabBarBottomCons?.constant = -(height - rect.origin.y)
         
         // 3.更新界面
         let duration = notify.userInfo![UIKeyboardAnimationDurationUserInfoKey] as! NSNumber
@@ -106,7 +106,7 @@ class ComposeViewController: UIViewController {
         let width = UIScreen.mainScreen().bounds.width
         let cons = toolBar.xmg_AlignInner(type: XMG_AlignType.BottomLeft, referView: view, size: CGSize(width: width, height: 44))
 
-        tabBarBottonCons = toolBar.xmg_Constraint(cons, attribute: NSLayoutAttribute.Bottom)
+        tabBarBottomCons = toolBar.xmg_Constraint(cons, attribute: NSLayoutAttribute.Bottom)
         
     }
     
