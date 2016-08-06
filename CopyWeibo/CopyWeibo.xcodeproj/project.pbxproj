@@ -62,6 +62,8 @@
 		37E84C301D33AFE9009153DA /* PopupMenuAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37E84C2F1D33AFE9009153DA /* PopupMenuAnimator.swift */; };
 		37E84C331D33BF32009153DA /* QRCodeViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 37E84C321D33BF32009153DA /* QRCodeViewController.storyboard */; };
 		37E84C351D33C046009153DA /* QRCodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37E84C341D33C046009153DA /* QRCodeViewController.swift */; };
+		37F751241D558C66004CC460 /* UIImage+Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37F751221D558C66004CC460 /* UIImage+Category.swift */; };
+		37F751251D558C66004CC460 /* PhotoPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37F751231D558C66004CC460 /* PhotoPickerViewController.swift */; };
 		D137C8AB673066F36614315D /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A8387EED7CC0A9E572239B1 /* Pods.framework */; };
 /* End PBXBuildFile section */
 
@@ -150,6 +152,8 @@
 		37E84C2F1D33AFE9009153DA /* PopupMenuAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopupMenuAnimator.swift; sourceTree = "<group>"; };
 		37E84C321D33BF32009153DA /* QRCodeViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = QRCodeViewController.storyboard; sourceTree = "<group>"; };
 		37E84C341D33C046009153DA /* QRCodeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QRCodeViewController.swift; sourceTree = "<group>"; };
+		37F751221D558C66004CC460 /* UIImage+Category.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Category.swift"; sourceTree = "<group>"; };
+		37F751231D558C66004CC460 /* PhotoPickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoPickerViewController.swift; sourceTree = "<group>"; };
 		4A8387EED7CC0A9E572239B1 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4D65CDBD2BF79CF0BAE1A06D /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		EF7B71096D4404847CBF1994 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
@@ -222,6 +226,7 @@
 		372E980D1D423BE90064BC36 /* Compose */ = {
 			isa = PBXGroup;
 			children = (
+				37F751211D558C4C004CC460 /* PhotoPicker */,
 				372E980E1D423C000064BC36 /* ComposeViewController.swift */,
 			);
 			path = Compose;
@@ -422,6 +427,15 @@
 				37E84C341D33C046009153DA /* QRCodeViewController.swift */,
 			);
 			path = QRCode;
+			sourceTree = "<group>";
+		};
+		37F751211D558C4C004CC460 /* PhotoPicker */ = {
+			isa = PBXGroup;
+			children = (
+				37F751221D558C66004CC460 /* UIImage+Category.swift */,
+				37F751231D558C66004CC460 /* PhotoPickerViewController.swift */,
+			);
+			path = PhotoPicker;
 			sourceTree = "<group>";
 		};
 		B90CB58437BEB624CFC9006F /* Frameworks */ = {
@@ -646,6 +660,7 @@
 				373BA2281D2FDE0800B7725C /* UIView+AutoLayout.swift in Sources */,
 				37E84C301D33AFE9009153DA /* PopupMenuAnimator.swift in Sources */,
 				37DC98CE1D3D274E00F41620 /* StatusForwardTableViewCell.swift in Sources */,
+				37F751251D558C66004CC460 /* PhotoPickerViewController.swift in Sources */,
 				3715FD8E1D3CFFAE00095612 /* StatusTableViewFooterView.swift in Sources */,
 				370E177C1D3E84EE00FD3E87 /* HomeRefreshControl.swift in Sources */,
 				3791868E1D2D1A2C003FAA92 /* MessageTableViewController.swift in Sources */,
@@ -674,6 +689,7 @@
 				3705A7B81D51ED28002BE686 /* FMDatabasePool.m in Sources */,
 				3705A7C11D51EDB6002BE686 /* SQLiteManager.swift in Sources */,
 				372E980F1D423C000064BC36 /* ComposeViewController.swift in Sources */,
+				37F751241D558C66004CC460 /* UIImage+Category.swift in Sources */,
 				37E15F0A1D312FC5007F9B8D /* PopupViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

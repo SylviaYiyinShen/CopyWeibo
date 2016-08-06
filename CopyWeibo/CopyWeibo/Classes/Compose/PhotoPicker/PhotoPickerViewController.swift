@@ -50,7 +50,7 @@ class PhotoPickerViewController: UIViewController {
         return view
     }()
 
-    private lazy var pictureImages = [UIImage]()
+    lazy var pictureImages = [UIImage]()
 
 }
 
